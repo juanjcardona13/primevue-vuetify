@@ -1,0 +1,111 @@
+/**
+ * plugins/vuetify.ts
+ *
+ * Framework documentation: https://vuetifyjs.com`
+ */
+
+// Composables
+import { createVuetify } from 'vuetify'
+// Styles
+import '@mdi/font/css/materialdesignicons.css'
+
+import 'vuetify/styles'
+import { VAutocomplete } from 'vuetify/components'
+
+// https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
+export default createVuetify({
+  blueprint: {
+    aliases: {
+      AutoComplete: VAutocomplete,
+      // CascadeSelect: '',
+      // Checkbox: '',
+      // ColorPicker: '',
+      // DatePicker: '',
+      // Editor: '',
+      // FloatLabel: '',
+      // IconField: '',
+      // IftaLabel: '',
+      // InputGroup: '',
+      // InputMask: '',
+      // InputNumber: '',
+      // InputOtp: '',
+      // InputText: '',
+      // Knob: '',
+      // Listbox: '',
+      // MultiSelect: '',
+      // Password: '',
+      // RadioButton: '',
+      // Rating: '',
+      // Select: '',
+      // SelectButton: '',
+      // Slider: '',
+      // Textarea: '',
+      // ToggleButton: '',
+      // ToggleSwitch: '',
+      // TreeSelect: '',
+      // Button: '',
+      // SpeedDial: '',
+      // SplitButton: '',
+      // DataTable: '',
+      // DataView: '',
+      // OrderList: '',
+      // OrganizationChart: '',
+      // Paginator: '',
+      // PickList: '',
+      // Timeline: '',
+      // Tree: '',
+      // TreeTable: '',
+      // VirtualScroller: '',
+      // Accordion: '',
+      // Card: '',
+      // DeferredContent: '',
+      // Divider: '',
+      // Fieldset: '',
+      // Panel: '',
+      // ScrollPanel: '',
+      // Splitter: '',
+      // Stepper: '',
+      // Tabs: '',
+      // Toolbar: '',
+      // ConfirmDialog: '',
+      // ConfirmPopup: '',
+      // Dialog: '',
+      // Drawer: '',
+      // DynamicDialog: '',
+      // Popover: '',
+      // FileUpload: '',
+      // Breadcrumb: '',
+      // ContextMenu: '',
+      // Dock: '',
+      // Menu: '',
+      // Menubar: '',
+      // MegaMenu: '',
+      // PanelMenu: '',
+      // TieredMenu: '',
+      // Chart: '',
+      // Message: '',
+      // Toast: '',
+      // Carousel: '',
+      // Galleria: '',
+      // Image: '',
+      // ImageCompare: '',
+      // Avatar: '',
+      // Badge: '',
+      // BlockUI: '',
+      // Chip: '',
+      // Fluid: '',
+      // Inplace: '',
+      // MeterGroup: '',
+      // ProgressBar: '',
+      // ProgressSpinner: '',
+      // ScrollTop: '',
+      // Skeleton: '',
+      // Tag: '',
+      // Terminal: '',
+    },
+  },
+  theme: {
+    defaultTheme: 'system',
+    
+  },
+})
