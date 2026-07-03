@@ -1,0 +1,40 @@
+.aura-slider {
+  &.v-input--horizontal .v-slider-track {
+    height: var(--v-slider-track-size);
+  }
+
+  &.v-input--vertical .v-slider-track {
+    width: var(--v-slider-track-size);
+  }
+
+  .v-slider-thumb__surface {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgb(var(--v-theme-surface));
+      box-shadow:
+        0 0.5px 0 rgba(0, 0, 0, 0.08),
+        0 1px 1px rgba(0, 0, 0, 0.14);
+      pointer-events: none;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .v-slider-thumb:focus-visible .v-slider-thumb__surface {
+    outline: 1px solid rgb(var(--v-theme-primary));
+    outline-offset: 2px;
+  }
+
+  .v-slider__container {
+    cursor: grab;
+  }
+}

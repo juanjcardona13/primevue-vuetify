@@ -1,0 +1,29 @@
+.aura-switch {
+  &.v-input {
+    --v-input-control-height: var(--v-switch-track-height);
+  }
+
+  .v-selection-control {
+    min-height: var(--v-switch-track-height);
+  }
+
+  .v-switch__track {
+    padding: 0;
+    box-shadow: var(--v-shadow-key-1), var(--v-shadow-ambient-1);
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .v-selection-control__input:hover::before {
+    opacity: 0;
+  }
+
+  .v-selection-control:not(.v-selection-control--disabled):hover {
+    &:not(.v-selection-control--dirty) .v-switch__track {
+      background-color: rgb(var(--v-theme-field-border-hover-color));
+    }
+
+    &.v-selection-control--dirty .v-switch__track {
+      background-color: rgb(var(--v-theme-primary-hover));
+    }
+  }
+}
