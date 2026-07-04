@@ -287,7 +287,11 @@
     ),
     // #endregion
 
+    // BUTTON
     $button-density: ('default': 0, 'comfortable': -2, 'compact': -3, 'tiny': -4),
+
+    // PAGINATOR
+    $button-pagination-active-overlay-opacity: var(--v-activated-opacity),
 
     // INPUT
     $input-density: ('spacious': 2, 'relaxed': 1, 'default': 0, 'comfortable': -2, 'compact': -5, 'tiny': -6),
@@ -309,6 +313,9 @@
 
     $otp-input-content-height: 58px,
     $otp-input-field-font-size: 1rem,
+
+    // TIMELINE
+    $timeline-dot-divider-background: rgb(var(--v-theme-surface-variant)),
 
     // LIST
     $list-density: ('default': 0, 'comfortable': -1, 'compact': -2, 'tiny': -4),

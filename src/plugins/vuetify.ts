@@ -80,8 +80,8 @@ export default createVuetify({
             primary: '#10b981',
             'on-primary': '#ffffff',
             
-            secondary: '#64748b',
-            'on-secondary': '#ffffff',
+            secondary: '#f1f5f9',
+            'on-secondary': '#475569',
 
             surface: '#ffffff',
             'on-surface': '#334155',
@@ -112,6 +112,7 @@ export default createVuetify({
             'field-border-color': '#cbd5e1',
             'field-border-hover-color': '#94a3b8',
             'primary-hover': '#059669',
+            'primary-activated': '#047857',
           },
           variables: {
             'border-color': '#e2e8f0',
@@ -136,23 +137,33 @@ export default createVuetify({
           dark: true,
           colors: {
             primary: '#34d399',
-            secondary: '#71717a',
-            surface: '#18181b',
-            background: '#09090b',
-            error: '#f87171',
-            success: '#4ade80',
-            warning: '#fb923c',
-            info: '#38bdf8',
             'on-primary': '#18181b',
-            'on-secondary': '#18181b',
+
+            secondary: '#27272a',
+            'on-secondary': '#d4d4d8',
+
+            surface: '#18181b',
             'on-surface': '#ffffff',
+            
+            background: '#09090b',
             'on-background': '#ffffff',
+
+            error: '#f87171',
             'on-error': '#450a0a',
+
+            success: '#4ade80',
             'on-success': '#052e16',
+
+            warning: '#fb923c',
             'on-warning': '#431407',
+
+            info: '#38bdf8',
             'on-info': '#082f49',
+
             'surface-bright': '#27272a',
+
             'surface-light': '#3f3f46',
+            
             'surface-variant': '#3f3f46',
             'on-surface-variant': '#a1a1aa',
 
@@ -210,22 +221,22 @@ export default createVuetify({
       ToggleSwitch: VSwitch,
       // TreeSelect: '',
       Button: VBtn,
-
-
-      
       SpeedDial: VSpeedDial,
-
-
-
-
       // SplitButton: '',
-      DataTable: VDataTable,
-      DataView: VDataIterator,
+      DataTable: VDataTable, // TODO
+      DataView: VDataIterator, // TODO
       // OrderList: '',
       // OrganizationChart: '',
       Paginator: VPagination,
       // PickList: '',
+      
+      
       Timeline: VTimeline,
+      
+
+
+
+
       Tree: VTreeview,
       // TreeTable: '',
       VirtualScroller: VVirtualScroll,
@@ -749,6 +760,8 @@ export default createVuetify({
       // },
 
       SpeedDial: {
+        location: 'top center',
+        modelValue: true,
         activatorProps: {
           rounded: 'circle',
           variant: 'flat',
@@ -756,7 +769,6 @@ export default createVuetify({
           density: 'compact',
           color: 'primary',
         },
-        modelValue: true,
         VMenu: {
           VBtn: {
             color: 'surface-bright',
@@ -764,6 +776,34 @@ export default createVuetify({
             density: 'comfortable',
           }
         }
+      },
+
+      Paginator: {
+        size: 'large',
+        density: 'compact',
+        rounded: 'circle',
+        activeColor: 'primary',
+        showFirstLastPage: true,
+        VPaginationBtn: {
+          class: 'on-surface-variant',
+        }
+      },
+      VPagination: {
+        size: 'large',
+        density: 'compact',
+        rounded: 'circle',
+        activeColor: 'primary',
+        showFirstLastPage: true,
+        VPaginationBtn: {
+          class: 'on-surface-variant',
+        }
+      },
+
+      Timeline: {
+        side: 'end',
+        truncateLine: 'both',
+        dotColor: 'background',
+        size: '16',
       },
 
 

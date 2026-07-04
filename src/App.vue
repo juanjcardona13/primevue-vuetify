@@ -3,18 +3,42 @@
     <!-- elevation-2 border rounded-md ma-10" style="width: 420px;"> -->
     Vuetify
 
-    <!-- SpeedDial -->
-    <SpeedDial>
-      <template v-slot:activator="{ props: activatorProps }">
-        <v-fab v-bind="activatorProps" icon="prime:plus"></v-fab>
-      </template>
+    <!-- Timeline -->
+    <Timeline>
+      <v-timeline-item>
+        Ordered
+      </v-timeline-item>
 
-      <v-btn key="1" icon="prime:pencil"></v-btn>
-      <v-btn key="2" icon="prime:refresh"></v-btn>
-      <v-btn key="3" icon="prime:trash"></v-btn>
-      <v-btn key="4" icon="prime:upload"></v-btn>
-      <v-btn key="5" icon="prime:external-link"></v-btn>
-    </SpeedDial>
+      <!-- <v-timeline-item>
+        Processing
+      </v-timeline-item>
+
+      <v-timeline-item>
+        Shipped
+      </v-timeline-item>
+
+      <v-timeline-item>
+        Delivered
+      </v-timeline-item> -->
+    </Timeline>
+
+    <!-- Paginator -->
+    <!-- <Paginator length="5" /> -->
+
+    <!-- SpeedDial -->
+    <!-- <VSheet width="420" height="420" class="text-center">
+      <SpeedDial>
+        <template v-slot:activator="{ props: activatorProps }">
+          <v-fab v-bind="activatorProps" icon="prime:plus"></v-fab>
+        </template>
+
+<v-btn key="1" icon="prime:pencil"></v-btn>
+<v-btn key="2" icon="prime:refresh"></v-btn>
+<v-btn key="3" icon="prime:trash"></v-btn>
+<v-btn key="4" icon="prime:upload"></v-btn>
+<v-btn key="5" icon="prime:external-link"></v-btn>
+</SpeedDial>
+</VSheet> -->
 
     <!-- Button -->
     <!-- <Button text="Click me" /> -->
