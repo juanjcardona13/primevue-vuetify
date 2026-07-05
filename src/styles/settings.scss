@@ -316,6 +316,7 @@
 
     // TIMELINE
     $timeline-dot-divider-background: rgb(var(--v-theme-surface-variant)),
+    $timeline-item-padding: 14px,
 
     // LIST
     $list-density: ('default': 0, 'comfortable': -1, 'compact': -2, 'tiny': -4),

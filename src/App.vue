@@ -3,13 +3,16 @@
     <!-- elevation-2 border rounded-md ma-10" style="width: 420px;"> -->
     Vuetify
 
+    <!-- Tree -->
+    <Tree :items="items" />
+
     <!-- Timeline -->
-    <Timeline>
+    <!-- <Timeline>
       <v-timeline-item>
         Ordered
       </v-timeline-item>
 
-      <!-- <v-timeline-item>
+      <v-timeline-item>
         Processing
       </v-timeline-item>
 
@@ -19,8 +22,8 @@
 
       <v-timeline-item>
         Delivered
-      </v-timeline-item> -->
-    </Timeline>
+      </v-timeline-item>
+    </Timeline> -->
 
     <!-- Paginator -->
     <!-- <Paginator length="5" /> -->
@@ -150,5 +153,29 @@ const items2 = ref([
 
 const value = shallowRef<string>()
 const selected = shallowRef<string[]>([])
+
+const items = ref([
+  {
+    id: 0,
+    title: 'Documents',
+    children: [
+      {
+        id: 1,
+        title: 'Work',
+        children: [
+          { id: 2, title: 'Expenses.doc', },
+          { id: 3, title: 'Resume.doc', },
+        ],
+      },
+      {
+        id: 4,
+        title: 'Home',
+        children: [
+          { id: 5, title: 'Invoices.txt', },
+        ],
+      },
+    ],
+  }
+])
 
 </script>

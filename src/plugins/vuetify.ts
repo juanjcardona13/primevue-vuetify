@@ -10,6 +10,8 @@ import { createVuetify } from 'vuetify'
 import 'vuetify/styles'
 import '@/styles/overrides/slider.scss'
 import '@/styles/overrides/switch.scss'
+import '@/styles/overrides/timeline.scss'
+import '@/styles/overrides/treeview.scss'
 import { 
   VAutocomplete, 
   VCheckbox,
@@ -229,15 +231,15 @@ export default createVuetify({
       // OrganizationChart: '',
       Paginator: VPagination,
       // PickList: '',
-      
-      
       Timeline: VTimeline,
       
-
-
-
-
+      
+      
       Tree: VTreeview,
+
+
+
+
       // TreeTable: '',
       VirtualScroller: VVirtualScroll,
       Accordion: VExpansionPanels,
@@ -606,7 +608,6 @@ export default createVuetify({
         density: 'tiny',
         color: 'primary',
         VListItem: {
-          class: 'px-2.5',
           rounded: 'sm',
         }
       },
@@ -619,7 +620,6 @@ export default createVuetify({
         density: 'tiny',
         color: 'primary',
         VListItem: {
-          class: 'px-2.5',
           rounded: 'sm',
         }
       },
@@ -743,7 +743,6 @@ export default createVuetify({
         baseColor: 'field-border-color',
         class: 'aura-switch',
       },
-
       Button: {
         color: 'primary',
         variant: 'flat',
@@ -758,7 +757,6 @@ export default createVuetify({
       //   size: 'large',
       //   density: 'compact',
       // },
-
       SpeedDial: {
         location: 'top center',
         modelValue: true,
@@ -798,12 +796,30 @@ export default createVuetify({
           class: 'on-surface-variant',
         }
       },
-
       Timeline: {
+        class: 'aura-timeline',
         side: 'end',
+        align: 'start',
         truncateLine: 'both',
-        dotColor: 'background',
+        dotColor: 'primary',
         size: '16',
+      },
+      VTimeline: {
+        class: 'aura-timeline',
+        side: 'end',
+        align: 'start',
+        truncateLine: 'both',
+        dotColor: 'primary',
+        size: '16',
+      },
+
+      Tree: {
+        class: 'aura-treeview',
+        density: 'tiny',
+        elevation: 0,
+        VTreeviewItem: {
+          link: false,
+        },
       },
 
 
