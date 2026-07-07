@@ -1,0 +1,36 @@
+.aura-tabs {
+  &.v-tabs {
+    height: auto;
+    box-shadow: inset 0 -1px 0 rgba(var(--v-border-color), var(--v-border-opacity));
+  }
+
+  .v-tab {
+    height: auto;
+    padding: 1rem 1.125rem;
+    font-size: 1rem;
+    font-weight: 600;
+
+    &:not(.v-tab--selected) {
+      color: rgb(var(--v-theme-on-surface-variant));
+    }
+
+    .v-btn__overlay {
+      display: none;
+    }
+  }
+
+  .v-tab__slider {
+    bottom: 0;
+    z-index: 1;
+  }
+}
+
+.aura-tab-panels {
+  &.v-tabs-window {
+    padding: 0.875rem 1.125rem 1.125rem 1.125rem;
+  }
+}
+
+.aura-tabs.v-tabs + .aura-tab-panels.v-tabs-window {
+  margin-top: -1rem;
+}

@@ -3,8 +3,127 @@
     <!-- elevation-2 border rounded-md ma-10" style="width: 420px;"> -->
     Vuetify
 
+    <!-- Breadcrumb -->
+    <Breadcrumb :items="['Home', 'Electronics', 'Computer']" />
+
+    <!-- FileUpload -->
+    <!-- <FileUpload /> -->
+
+    <!-- Popover -->
+    <!-- <Popover>
+      <template v-slot:activator="{ props }">
+        <Button v-bind="props" prepend-icon="prime:share-alt" text="Share"></Button>
+      </template>
+<Card>
+  a
+</Card>
+</Popover> -->
+
+
+    <!-- Drawer -->
+    <!-- <VLayout>
+      <Drawer v-model="visible">
+        a
+      </Drawer>
+    </VLayout>
+    <Button icon="prime:arrow-right" @click="visible = true" /> -->
+
+
+    <!-- Dialog -->
+    <!-- <Dialog>
+      <template v-slot:activator="{ props: activatorProps }">
+        <Button v-bind="activatorProps" text="Show"></Button>
+      </template>
+<template v-slot:default="{ isActive }">
+        <Card append-icon="prime:times" />
+      </template>
+</Dialog> -->
+
+    <!-- Toolbar -->
+    <!-- <Toolbar /> -->
+
+    <!-- Tabs -->
+    <!-- <Tabs v-model="tab">
+      <v-tab value="0">Header I</v-tab>
+      <v-tab value="1">Header II</v-tab>
+      <v-tab value="2">Header III</v-tab>
+    </Tabs>
+
+    <TabPanels v-model="tab">
+      <TabPanel value="0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+        deserunt mollit anim id est laborum.
+      </TabPanel>
+      <TabPanel value="1">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+        beatae vitae dicta sunt explicabo. Nemo enim
+        ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+        dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
+        numquam eius modi.
+      </TabPanel>
+      <TabPanel value="2">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+        provident, similique sunt in culpa
+        qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+        facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
+        cumque nihil impedit quo minus.
+      </TabPanel>
+    </TabPanels> -->
+
+
+    <!-- Stepper -->
+    <!-- <Stepper :items="['Header I', 'Header II', 'Header III']">
+      <template v-slot:item.1>
+        Content I
+      </template>
+
+<template v-slot:item.2>
+        Content II
+      </template>
+
+<template v-slot:item.3>
+        Content III
+      </template>
+</Stepper> -->
+
+
+    <!-- Divider -->
+    <!-- <Divider /> -->
+
+    <!-- Card -->
+    <!-- <Card title="Simple Card"
+      text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!">
+    </Card> -->
+
+    <!-- Accordion -->
+    <!-- <Accordion>
+      <AccordionPanel title="Header I"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+      </AccordionPanel>
+      <AccordionPanel title="Header II"
+        text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.">
+      </AccordionPanel>
+      <AccordionPanel title="Header III"
+        text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.">
+      </AccordionPanel>
+    </Accordion> -->
+
+    <!-- VirtualScroller -->
+    <!-- <VirtualScroller :height="300"
+      :items="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30']">
+      <template v-slot:default="{ item }">
+        Item {{ item }}
+      </template>
+</VirtualScroller> -->
+
     <!-- Tree -->
-    <Tree :items="items" />
+    <!-- <Tree :items="items" /> -->
 
     <!-- Timeline -->
     <!-- <Timeline>
@@ -151,6 +270,8 @@ const items2 = ref([
   { icon: 'pi pi-external-link', }
 ])
 
+const tab = ref('0')
+const visible = ref(false)
 const value = shallowRef<string>()
 const selected = shallowRef<string[]>([])
 
@@ -177,5 +298,11 @@ const items = ref([
     ],
   }
 ])
+
+
+const fav = ref(true)
+const menu = ref(false)
+const message = ref(false)
+const hints = ref(true)
 
 </script>

@@ -12,6 +12,8 @@ import '@/styles/overrides/slider.scss'
 import '@/styles/overrides/switch.scss'
 import '@/styles/overrides/timeline.scss'
 import '@/styles/overrides/treeview.scss'
+import '@/styles/overrides/stepper.scss'
+import '@/styles/overrides/tabs.scss'
 import { 
   VAutocomplete, 
   VCheckbox,
@@ -63,6 +65,17 @@ import {
   VProgressCircular,
   VSkeletonLoader,
   VDateInput,
+  VExpansionPanel,
+  VExpansionPanelTitle,
+  VExpansionPanelText,
+  VStepperHeader,
+  VStepperItem,
+  VStepperWindow,
+  VStepperWindowItem,
+  VStepperVertical,
+  VTabsWindow,
+  VTabsWindowItem,
+  VTab,
 } from 'vuetify/components'
 import { VMaskInput } from 'vuetify/labs/VMaskInput'
 
@@ -115,11 +128,15 @@ export default createVuetify({
             'field-border-hover-color': '#94a3b8',
             'primary-hover': '#059669',
             'primary-activated': '#047857',
+            'border-color': '#e2e8f0',
           },
           variables: {
             'border-color': '#e2e8f0',
             'border-opacity': '1',
             'high-emphasis-opacity': 1,
+
+            // 0 1px 3px 0 rgba(0,0,0,0.1),
+            // 0 1px 2px -1px rgba(0,0,0,0.1)
 
             'shadow-key-0': '0 0 0 0 transparent',
             'shadow-key-1': '0 0 #0000',
@@ -232,26 +249,32 @@ export default createVuetify({
       Paginator: VPagination,
       // PickList: '',
       Timeline: VTimeline,
-      
-      
-      
-      Tree: VTreeview,
-
-
-
-
+      Tree: VTreeview, // TODO
       // TreeTable: '',
       VirtualScroller: VVirtualScroll,
       Accordion: VExpansionPanels,
+      AccordionPanel: VExpansionPanel,
+      AccordionHeader: VExpansionPanelTitle,
+      AccordionContent: VExpansionPanelText,
       Card: VCard,
       DeferredContent: VLazy,
       Divider: VDivider,
       // Fieldset: '',
-      Panel: VExpansionPanels,
+      // Panel: '',
       // ScrollPanel: '',
       // Splitter: '',
       Stepper: VStepper,
+      StepList: VStepperHeader,
+      Step: VStepperItem,
+      StepPanels: VStepperWindow,
+      StepPanel: VStepperWindowItem,
+      StepItem: VStepperVertical,
+      
       Tabs: VTabs,
+      // TabList
+      Tab: VTab,
+      TabPanels: VTabsWindow,
+      TabPanel: VTabsWindowItem,
       Toolbar: VToolbar,
       ConfirmDialog: VConfirmEdit,
       // ConfirmPopup: '',
@@ -259,8 +282,14 @@ export default createVuetify({
       Drawer: VNavigationDrawer,
       // DynamicDialog: '',
       Popover: VMenu,
-      FileUpload: VFileUpload,
+      FileUpload: VFileUpload, // TODO
+      
+
+
+
       Breadcrumb: VBreadcrumbs,
+
+      
       // ContextMenu: '',
       // Dock: '',
       Menu: VMenu,
@@ -822,6 +851,108 @@ export default createVuetify({
         },
       },
 
+      Card: {
+        elevation: 2,
+        rounded: 'xl',
+      },
+      VCard: {
+        elevation: 2,
+        rounded: 'xl',
+      },
+
+      Divider: {
+        class: 'my-3.5',
+        color: 'border-color',
+      },
+      VDivider: {
+        class: 'my-3.5',
+        color: 'border-color',
+      },
+
+      Stepper: {
+        class: 'aura-stepper',
+        hideActions: true,
+        editable: true,
+        nonLinear: true,
+        editIcon: false,
+        VDivider: {
+          thickness: 2,
+        }
+      },
+      VStepper: {
+        class: 'aura-stepper',
+        hideActions: true,
+        editable: true,
+        nonLinear: true,
+        editIcon: false,
+        VDivider: {
+          thickness: 2,
+        }
+      },
+      StepList: {
+        class: 'elevation-0'
+      },
+      VStepperHeader: {
+        class: 'elevation-0'
+      },
+
+      Tabs: {
+        class: 'aura-tabs',
+        color: 'primary',
+      },
+      VTabs: {
+        class: 'aura-tabs',
+        color: 'primary',
+      },
+      TabPanels: {
+        class: 'aura-tab-panels',
+      },
+      VTabsWindow: {
+        class: 'aura-tab-panels',
+      },
+
+      Breadcrumb: {
+        divider: '›',
+        color: 'on-surface-variant',
+        bgColor: 'surface',
+        rounded: 'md',
+      },
+      VBreadcrumbs: {
+        divider: '›',
+        color: 'on-surface-variant',
+        bgColor: 'surface',
+        rounded: 'md',
+      },
+
+      Toolbar: {
+        color: 'surface',
+        border: 'sm border-color',
+        rounded: 'md',
+        density: 'compact',
+        height: 56,
+      },
+      VToolbar: {
+        color: 'surface',
+        border: 'sm border-color',
+        rounded: 'md',
+        density: 'compact',
+        height: 56,
+      },
+
+      Dialog: {
+        scrim: false,
+        contentClass: 'justify-center align-center'
+      },
+      VDialog: {
+        scrim: false,
+        contentClass: 'justify-center align-center'
+      },
+
+      Popover: {
+        closeOnContentClick: false,
+      },
+
+
 
 
       Password: {
@@ -836,9 +967,26 @@ export default createVuetify({
       },
       Accordion: {
         variant: 'accordion',
-      },
-      Popover: {
-        closeOnContentClick: false,
+        AccordionPanel: {
+          hover: false,
+          elevation: 0,
+        },
+        VExpansionPanel: {
+          hover: false,
+          elevation: 0,
+        },
+        AccordionHeader: {
+          class: 'font-weight-semibold bg-backgorund on-surface-variant pa-4',
+          VIcon: {
+            size: 'large'
+          }
+        },
+        VExpansionPanelTitle: {
+          class: 'font-weight-semibold bg-backgorund on-surface-variant pa-4',
+          VIcon: {
+            size: 'large'
+          }
+        },
       },
       Toast: {
         location: 'top end',

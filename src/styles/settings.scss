@@ -321,7 +321,7 @@
     // LIST
     $list-density: ('default': 0, 'comfortable': -1, 'compact': -2, 'tiny': -4),
 
-    // SWITCH (Aura ToggleSwitch — 2.5rem×1.5rem track, 1rem handle, 0.25rem gap @ 14px root)
+    // SWITCH
     $switch-track-width: 35px,
     $switch-track-opacity: 1,
     $switch-thumb-width: 14px,
@@ -334,4 +334,40 @@
     $switch-inset-thumb-width: 14px,
     $switch-inset-thumb-off-height: 14px,
     $switch-inset-thumb-off-width: 14px,
+
+    // ACCORDION
+    $expansion-panel-title-font-size: 1rem,
+    $expansion-panel-text-padding: 0 1.125rem 1.125rem 1.125rem,
+
+    // CARD
+    $card-text-font-size: 1rem,
+    $card-item-padding: 1.25rem 1.25rem 0.5rem 1.25rem,
+    $card-actions-padding: 0 1.25rem 1.25rem 1.25rem,
+    $card-text-padding: 0 1.25rem,
+
+    // VCardSubtitle
+    $card-subtitle-color: var(--v-theme-on-surface-variant),
+    $card-subtitle-font-size: 1rem,
+    $card-subtitle-opacity: 1,
+
+    // STEPPER
+    $stepper-elevation: 0,
+    $stepper-item-padding: 0.5rem,
+    $stepper-header-divider-margin: 0 0.5rem,
+    $stepper-window-margin: 0.875rem 0.5rem 1.125rem 0.5rem,
+
+    // TABS
+    $tab-slider-size: 1px,
+
+    // BREADCRUMB
+    $breadcrumbs-item-link-text-decoration: none,
+    $breadcrumbs-item-disabled-opacity: 1,
+
+    // OVERLAY
+    $overlay-opacity: 0.4,
+
+    // NAVIGATION DRAWER
+    $navigation-drawer-scrim-opacity: 0.4,
+
+
 );

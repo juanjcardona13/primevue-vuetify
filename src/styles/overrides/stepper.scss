@@ -1,0 +1,35 @@
+.aura-stepper {
+  .v-stepper-item__overlay {
+    display: none;
+  }
+
+  .v-stepper-header {
+    .v-stepper-item:has(~ .v-stepper-item--selected) + .v-divider {
+      color: rgb(var(--v-theme-primary));
+      opacity: 1;
+    }
+  }
+
+  .v-stepper-item__avatar.v-avatar {
+    height: 28px !important;
+    width: 28px !important;
+    font-size: 1.143rem;
+    background: transparent;
+    border: 2px solid rgba(var(--v-border-color), var(--v-border-opacity));
+    color: rgb(var(--v-theme-on-surface-variant));
+  }
+
+  .v-stepper-item {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .v-stepper-item--selected {
+    color: rgb(var(--v-theme-primary));
+
+    .v-stepper-item__avatar.v-avatar {
+      background: transparent;
+      color: rgb(var(--v-theme-primary));
+    }
+  }
+}
