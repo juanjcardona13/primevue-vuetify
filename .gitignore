@@ -1,7 +1,31 @@
+# Dependencies
 node_modules
+
+# Build output
+dist
+
+# Environment
 .env
+.env.*
+!.env.example
+
+# OS / Editor
 .DS_Store
 .idea
 .vscode
-dist
+
+# Local / private
 private-docs
+
+# AI agents & assistant config (kept local, not part of the blueprint)
+.ruler/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.cursor/
+.trae/
+.roo/
+.clinerules
+.windsurfrules
+.mcp.json
+.github/copilot-instructions.md

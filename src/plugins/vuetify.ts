@@ -378,7 +378,7 @@ export default createVuetify({
       Breadcrumb: VBreadcrumbs,
       // ContextMenu: '',
       // Dock: '',
-      Menu: VMenu, // TODO cuando PrimeVue tiene popup usar VMeny+VList, pero sino usar vlist
+      Menu: VMenu, // TODO when PrimeVue uses a popup, use VMenu + VList; otherwise use VList
       // Menubar: '',,
       // MegaMenu: '',
       PanelMenu: VList, // TODO

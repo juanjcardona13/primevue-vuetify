@@ -1,22 +1,22 @@
-# Mapeo de componentes PrimeVue → Vuetify
+# PrimeVue → Vuetify component mapping
 
-| PrimeVue | Vuetify | Observación |
+| PrimeVue | Vuetify | Notes |
 |----------|---------|-------------|
 | AutoComplete | VAutocomplete | |
-| CascadeSelect | | Sin equivalente definido |
+| CascadeSelect | | No equivalent defined |
 | Checkbox | VCheckbox | |
 | ColorPicker | VColorPicker | |
 | DatePicker | VDateInput | |
-| Editor | | Sin equivalente definido |
-| FloatLabel | | Sin equivalente definido |
-| IconField | | Sin equivalente definido |
-| IftaLabel | | Sin equivalente definido |
-| InputGroup | | Sin equivalente definido |
+| Editor | | No equivalent defined |
+| FloatLabel | | No equivalent defined |
+| IconField | | No equivalent defined |
+| IftaLabel | | No equivalent defined |
+| InputGroup | | No equivalent defined |
 | InputMask | VMaskInput | |
 | InputNumber | VNumberInput | |
 | InputOtp | VOtpInput | |
 | InputText | VTextField | |
-| Knob | | Sin equivalente definido |
+| Knob | | No equivalent defined |
 | Listbox | VList | |
 | MultiSelect | VSelect | |
 | Password | VTextField | |
@@ -29,19 +29,19 @@
 | Textarea | VTextarea | |
 | ToggleButton | VBtn | |
 | ToggleSwitch | VSwitch | |
-| TreeSelect | | Sin equivalente definido |
+| TreeSelect | | No equivalent defined |
 | Button | VBtn | |
 | SpeedDial | VSpeedDial | |
-| SplitButton | | Sin equivalente definido |
+| SplitButton | | No equivalent defined |
 | DataTable | VDataTable | TODO |
 | DataView | VDataIterator | TODO |
-| OrderList | | Sin equivalente definido |
-| OrganizationChart | | Sin equivalente definido |
+| OrderList | | No equivalent defined |
+| OrganizationChart | | No equivalent defined |
 | Paginator | VPagination | |
-| PickList | | Sin equivalente definido |
+| PickList | | No equivalent defined |
 | Timeline | VTimeline | |
 | Tree | VTreeview | TODO |
-| TreeTable | | Sin equivalente definido |
+| TreeTable | | No equivalent defined |
 | VirtualScroller | VVirtualScroll | |
 | Accordion | VExpansionPanels | |
 | AccordionPanel | VExpansionPanel | |
@@ -50,10 +50,10 @@
 | Card | VCard | |
 | DeferredContent | VLazy | |
 | Divider | VDivider | |
-| Fieldset | | Sin equivalente definido |
-| Panel | | Sin equivalente definido |
-| ScrollPanel | | Sin equivalente definido |
-| Splitter | | Sin equivalente definido |
+| Fieldset | | No equivalent defined |
+| Panel | | No equivalent defined |
+| ScrollPanel | | No equivalent defined |
+| Splitter | | No equivalent defined |
 | Stepper | VStepper | |
 | StepList | VStepperHeader | |
 | Step | VStepperItem | |
@@ -61,43 +61,43 @@
 | StepPanel | VStepperWindowItem | |
 | StepItem | VStepperVertical | |
 | Tabs | VTabs | |
-| TabList | | Sin equivalente definido |
+| TabList | | No equivalent defined |
 | Tab | VTab | |
 | TabPanels | VTabsWindow | |
 | TabPanel | VTabsWindowItem | |
 | Toolbar | VToolbar | |
 | ConfirmDialog | VConfirmEdit | |
-| ConfirmPopup | | Sin equivalente definido |
+| ConfirmPopup | | No equivalent defined |
 | Dialog | VDialog | |
 | Drawer | VNavigationDrawer | |
-| DynamicDialog | | Sin equivalente definido |
+| DynamicDialog | | No equivalent defined |
 | Popover | VMenu | |
 | FileUpload | VFileUpload | TODO |
 | Breadcrumb | VBreadcrumbs | |
-| ContextMenu | | Sin equivalente definido |
-| Dock | | Sin equivalente definido |
+| ContextMenu | | No equivalent defined |
+| Dock | | No equivalent defined |
 | Menu | VMenu | TODO |
-| Menubar | | Sin equivalente definido |
-| MegaMenu | | Sin equivalente definido |
+| Menubar | | No equivalent defined |
+| MegaMenu | | No equivalent defined |
 | PanelMenu | VList | TODO |
-| TieredMenu | | Sin equivalente definido |
-| Chart | | Sin equivalente definido |
+| TieredMenu | | No equivalent defined |
+| Chart | | No equivalent defined |
 | Message | VAlert | |
 | Toast | VSnackbarQueue | |
 | Carousel | VCarousel | |
-| Galleria | | Sin equivalente definido |
+| Galleria | | No equivalent defined |
 | Image | VImg | |
-| ImageCompare | | Sin equivalente definido |
+| ImageCompare | | No equivalent defined |
 | Avatar | VAvatar | |
 | Badge | VBadge | |
-| BlockUI | | Sin equivalente definido |
+| BlockUI | | No equivalent defined |
 | Chip | VChip | |
-| Fluid | | Sin equivalente definido |
-| Inplace | | Sin equivalente definido |
+| Fluid | | No equivalent defined |
+| Inplace | | No equivalent defined |
 | MeterGroup | VProgressLinear | |
 | ProgressBar | VProgressLinear | |
 | ProgressSpinner | VProgressCircular | |
-| ScrollTop | | Sin equivalente definido |
+| ScrollTop | | No equivalent defined |
 | Skeleton | VSkeletonLoader | |
 | Tag | VChip | |
-| Terminal | | Sin equivalente definido |
+| Terminal | | No equivalent defined |
