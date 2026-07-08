@@ -91,59 +91,2868 @@
           <h2 class="text-h6 font-weight-semibold mb-4">Comparisons</h2>
 
           <v-expansion-panels v-model="expandedPanels" multiple variant="accordion">
-            <v-expansion-panel
-              v-for="(mapping, index) in componentMappings"
-              :id="mapping.id"
-              :key="mapping.id"
-              :value="index"
-            >
+            <!-- AutoComplete -->
+            <v-expansion-panel id="component-autocomplete" value="component-autocomplete">
               <v-expansion-panel-title>
                 <div class="d-flex align-center flex-wrap ga-2">
-                  <span>{{ mapping.primevue }}</span>
+                  <span>AutoComplete</span>
                   <span class="text-medium-emphasis">→</span>
-                  <span>{{ mapping.vuetify ?? '—' }}</span>
-
-                  <v-chip
-                    :color="getStatusColor(mapping.status)"
-                    size="x-small"
-                    variant="flat"
-                  >
-                    {{ getStatusLabel(mapping.status) }}
-                  </v-chip>
+                  <span>VAutocomplete</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
                 </div>
               </v-expansion-panel-title>
 
               <v-expansion-panel-text>
                 <div class="d-flex flex-wrap ga-4">
-                  <v-sheet
-                    border
-                    class="pa-4 compare-column"
-                    rounded="lg"
-                  >
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
                     <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
-                    <ComponentRender :render="() => renderPrimeVueDemo(mapping.primevue)" />
+                    <PvAutoComplete />
                   </v-sheet>
 
-                  <v-sheet
-                    border
-                    class="pa-4 compare-column"
-                    rounded="lg"
-                  >
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <AutoComplete />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- CascadeSelect -->
+            <v-expansion-panel id="component-cascadeselect" value="component-cascadeselect">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>CascadeSelect</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvCascadeSelect />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Checkbox -->
+            <v-expansion-panel id="component-checkbox" value="component-checkbox">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Checkbox</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VCheckbox</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvCheckbox />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Checkbox />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ColorPicker -->
+            <v-expansion-panel id="component-colorpicker" value="component-colorpicker">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ColorPicker</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VColorPicker</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvColorPicker />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <ColorPicker />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- DatePicker -->
+            <v-expansion-panel id="component-datepicker" value="component-datepicker">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>DatePicker</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VDateInput</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvDatePicker />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <DatePicker />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Editor -->
+            <v-expansion-panel id="component-editor" value="component-editor">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Editor</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <span class="text-medium-emphasis text-caption">Requires optional dependency (quill / chart.js)</span>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- FloatLabel -->
+            <v-expansion-panel id="component-floatlabel" value="component-floatlabel">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>FloatLabel</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvFloatLabel>
+                      <PvInputText id="float-demo" v-model="basicValue" />
+                      <label for="float-demo">Label</label>
+                    </PvFloatLabel>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- IconField -->
+            <v-expansion-panel id="component-iconfield" value="component-iconfield">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>IconField</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvIconField>
+                      <PvInputText v-model="basicValue" />
+                    </PvIconField>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- IftaLabel -->
+            <v-expansion-panel id="component-iftalabel" value="component-iftalabel">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>IftaLabel</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvIftaLabel>
+                      <PvInputText id="ifta-demo" v-model="basicValue" />
+                      <label for="ifta-demo">Label</label>
+                    </PvIftaLabel>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- InputGroup -->
+            <v-expansion-panel id="component-inputgroup" value="component-inputgroup">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>InputGroup</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvInputGroup>
+                      <PvInputGroupAddon>$</PvInputGroupAddon>
+                      <PvInputText />
+                    </PvInputGroup>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- InputMask -->
+            <v-expansion-panel id="component-inputmask" value="component-inputmask">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>InputMask</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VMaskInput</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvInputMask mask="99-999999" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <InputMask mask="##-######" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- InputNumber -->
+            <v-expansion-panel id="component-inputnumber" value="component-inputnumber">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>InputNumber</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VNumberInput</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvInputNumber />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <InputNumber />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- InputOtp -->
+            <v-expansion-panel id="component-inputotp" value="component-inputotp">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>InputOtp</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VOtpInput</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvInputOtp />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <InputOtp />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- InputText -->
+            <v-expansion-panel id="component-inputtext" value="component-inputtext">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>InputText</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTextField</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvInputText />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <InputText />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Knob -->
+            <v-expansion-panel id="component-knob" value="component-knob">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Knob</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvKnob v-model="knobValue" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Listbox -->
+            <v-expansion-panel id="component-listbox" value="component-listbox">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Listbox</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VList</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvListbox v-model="basicValue" :options="basicOptions" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Listbox :items="basicOptions" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- MultiSelect -->
+            <v-expansion-panel id="component-multiselect" value="component-multiselect">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>MultiSelect</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VSelect</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvMultiSelect v-model="basicValue" :options="basicOptions" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <MultiSelect v-model="basicValue" :items="basicOptions" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Password -->
+            <v-expansion-panel id="component-password" value="component-password">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Password</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTextField</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvPassword />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Password />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- RadioButtonGroup -->
+            <v-expansion-panel id="component-radiobuttongroup" value="component-radiobuttongroup">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>RadioButtonGroup</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VRadioGroup</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvRadioButtonGroup v-model="basicValue">
+                      <PvRadioButton value="a" />
+                    </PvRadioButtonGroup>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
                     <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
 
-                    <ComponentRender
-                      v-if="mapping.vuetify"
-                      :render="() => renderVuetifyDemo(mapping.primevue)"
-                    />
+                    <RadioButtonGroup v-model="basicValue">
+                      <RadioButton value="a" />
+                    </RadioButtonGroup>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
 
-                    <v-alert
-                      v-else
-                      density="compact"
-                      type="info"
-                      variant="tonal"
-                    >
-                      No Vuetify equivalent defined yet.
-                    </v-alert>
+            <!-- RadioButton -->
+            <v-expansion-panel id="component-radiobutton" value="component-radiobutton">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>RadioButton</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VRadio</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvRadioButtonGroup v-model="basicValue">
+                      <PvRadioButton value="a" />
+                    </PvRadioButtonGroup>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <RadioButtonGroup v-model="basicValue">
+                      <RadioButton value="a" />
+                    </RadioButtonGroup>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Rating -->
+            <v-expansion-panel id="component-rating" value="component-rating">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Rating</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VRating</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvRating />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Rating />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Select -->
+            <v-expansion-panel id="component-select" value="component-select">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Select</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VSelect</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvSelect v-model="basicValue" :options="basicOptions" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Select v-model="basicValue" :items="basicOptions" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- SelectButton -->
+            <v-expansion-panel id="component-selectbutton" value="component-selectbutton">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>SelectButton</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VBtnToggle</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvSelectButton v-model="basicValue" :options="basicOptions" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <SelectButton v-model="basicValue">
+                      <Button v-for="option in basicOptions" :key="option" :text="option" :value="option" />
+                    </SelectButton>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Slider -->
+            <v-expansion-panel id="component-slider" value="component-slider">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Slider</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VSlider</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvSlider />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Slider />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Textarea -->
+            <v-expansion-panel id="component-textarea" value="component-textarea">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Textarea</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTextarea</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvTextarea />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Textarea />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ToggleButton -->
+            <v-expansion-panel id="component-togglebutton" value="component-togglebutton">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ToggleButton</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VBtn</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvToggleButton :model-value="false" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <ToggleButton />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ToggleSwitch -->
+            <v-expansion-panel id="component-toggleswitch" value="component-toggleswitch">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ToggleSwitch</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VSwitch</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvToggleSwitch />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <ToggleSwitch />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- TreeSelect -->
+            <v-expansion-panel id="component-treeselect" value="component-treeselect">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>TreeSelect</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvTreeSelect v-model="basicValue" :options="basicTree" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Button -->
+            <v-expansion-panel id="component-button" value="component-button">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Button</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VBtn</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvButton>Button</PvButton>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Button text="Button" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- SpeedDial -->
+            <v-expansion-panel id="component-speeddial" value="component-speeddial">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>SpeedDial</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VSpeedDial</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvSpeedDial :model="[{ icon: 'pi pi-pencil' }]" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <SpeedDial>
+                      <template #activator="{ props }">
+                        <v-fab v-bind="props" icon="prime:plus" />
+                      </template>
+
+                      <v-btn icon="prime:pencil" />
+                    </SpeedDial>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- SplitButton -->
+            <v-expansion-panel id="component-splitbutton" value="component-splitbutton">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>SplitButton</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvSplitButton label="Save" :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- DataTable -->
+            <v-expansion-panel id="component-datatable" value="component-datatable">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>DataTable</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VDataTable</span>
+                  <v-chip color="warning" size="x-small" variant="flat">In progress</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvDataTable :value="basicTableData">
+                      <PvColumn field="name" header="Name" />
+                    </PvDataTable>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <DataTable :headers="[{ title: 'Name', key: 'name' }]" :items="basicTableData" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- DataView -->
+            <v-expansion-panel id="component-dataview" value="component-dataview">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>DataView</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VDataIterator</span>
+                  <v-chip color="warning" size="x-small" variant="flat">In progress</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvDataView :value="basicTableData">
+                      <template #list="{ items }">
+                        <div v-for="item in items" :key="item.name">{{ item.name }}</div>
+                      </template>
+                    </PvDataView>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <DataView :items="basicTableData">
+                      <template #default="{ items }">
+                        <div v-for="item in items" :key="item.raw.name">{{ item.raw.name }}</div>
+                      </template>
+                    </DataView>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- OrderList -->
+            <v-expansion-panel id="component-orderlist" value="component-orderlist">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>OrderList</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvOrderList v-model="orderListValue" data-key="label">
+                      <template #option="{ option }">{{ option.label }}</template>
+                    </PvOrderList>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- OrganizationChart -->
+            <v-expansion-panel id="component-organizationchart" value="component-organizationchart">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>OrganizationChart</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvOrganizationChart :value="orgChartValue" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Paginator -->
+            <v-expansion-panel id="component-paginator" value="component-paginator">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Paginator</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VPagination</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvPaginator :rows="10" :total-records="50" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Paginator :length="5" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- PickList -->
+            <v-expansion-panel id="component-picklist" value="component-picklist">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>PickList</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvPickList v-model="pickListValue" data-key="label">
+                      <template #option="{ option }">{{ option.label }}</template>
+                    </PvPickList>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Timeline -->
+            <v-expansion-panel id="component-timeline" value="component-timeline">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Timeline</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTimeline</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvTimeline :value="basicTimeline">
+                      <template #content="{ item }">{{ item.status }}</template>
+                    </PvTimeline>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Timeline>
+                      <v-timeline-item>Step</v-timeline-item>
+                    </Timeline>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Tree -->
+            <v-expansion-panel id="component-tree" value="component-tree">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Tree</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTreeview</span>
+                  <v-chip color="warning" size="x-small" variant="flat">In progress</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvTree :value="basicTree" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Tree :items="vuetifyTree" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- TreeTable -->
+            <v-expansion-panel id="component-treetable" value="component-treetable">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>TreeTable</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvTreeTable :value="basicTree">
+                      <PvColumn expander field="label" header="Label" />
+                    </PvTreeTable>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- VirtualScroller -->
+            <v-expansion-panel id="component-virtualscroller" value="component-virtualscroller">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>VirtualScroller</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VVirtualScroll</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvVirtualScroller :item-size="32" :items="basicOptions" style="height: 120px">
+                      <template #item="{ item }">
+                        <div>{{ item }}</div>
+                      </template>
+                    </PvVirtualScroller>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <VirtualScroller :height="120" :items="basicOptions">
+                      <template #default="{ item }">
+                        <div>{{ item }}</div>
+                      </template>
+                    </VirtualScroller>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Accordion -->
+            <v-expansion-panel id="component-accordion" value="component-accordion">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Accordion</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VExpansionPanels</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvAccordion>
+                      <PvAccordionPanel value="0">
+                        <PvAccordionHeader>Header</PvAccordionHeader>
+                        <PvAccordionContent>Content</PvAccordionContent>
+                      </PvAccordionPanel>
+                    </PvAccordion>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Accordion>
+                      <AccordionPanel text="Content" title="Header" />
+                    </Accordion>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- AccordionPanel -->
+            <v-expansion-panel id="component-accordionpanel" value="component-accordionpanel">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>AccordionPanel</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VExpansionPanel</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvAccordion>
+                      <PvAccordionPanel value="0">
+                        <PvAccordionHeader>Header</PvAccordionHeader>
+                        <PvAccordionContent>Content</PvAccordionContent>
+                      </PvAccordionPanel>
+                    </PvAccordion>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Accordion>
+                      <AccordionPanel text="Content" title="Header" />
+                    </Accordion>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- AccordionHeader -->
+            <v-expansion-panel id="component-accordionheader" value="component-accordionheader">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>AccordionHeader</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VExpansionPanelTitle</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvAccordion>
+                      <PvAccordionPanel value="0">
+                        <PvAccordionHeader>Header</PvAccordionHeader>
+                        <PvAccordionContent>Content</PvAccordionContent>
+                      </PvAccordionPanel>
+                    </PvAccordion>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Accordion>
+                      <AccordionPanel text="Content" title="Header" />
+                    </Accordion>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- AccordionContent -->
+            <v-expansion-panel id="component-accordioncontent" value="component-accordioncontent">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>AccordionContent</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VExpansionPanelText</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvAccordion>
+                      <PvAccordionPanel value="0">
+                        <PvAccordionHeader>Header</PvAccordionHeader>
+                        <PvAccordionContent>Content</PvAccordionContent>
+                      </PvAccordionPanel>
+                    </PvAccordion>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Accordion>
+                      <AccordionPanel text="Content" title="Header" />
+                    </Accordion>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Card -->
+            <v-expansion-panel id="component-card" value="component-card">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Card</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VCard</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvCard>
+                      <template #title>Card</template>
+                      <template #content>Content</template>
+                    </PvCard>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Card text="Content" title="Card" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- DeferredContent -->
+            <v-expansion-panel id="component-deferredcontent" value="component-deferredcontent">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>DeferredContent</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VLazy</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvDeferredContent>
+                      <div>Deferred content</div>
+                    </PvDeferredContent>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <DeferredContent>
+                      <div>Deferred content</div>
+                    </DeferredContent>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Divider -->
+            <v-expansion-panel id="component-divider" value="component-divider">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Divider</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VDivider</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvDivider />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Divider />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Fieldset -->
+            <v-expansion-panel id="component-fieldset" value="component-fieldset">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Fieldset</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvFieldset legend="Legend">Content</PvFieldset>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Panel -->
+            <v-expansion-panel id="component-panel" value="component-panel">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Panel</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvPanel header="Header">Content</PvPanel>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ScrollPanel -->
+            <v-expansion-panel id="component-scrollpanel" value="component-scrollpanel">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ScrollPanel</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvScrollPanel style="width: 100%; height: 120px">Content</PvScrollPanel>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Splitter -->
+            <v-expansion-panel id="component-splitter" value="component-splitter">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Splitter</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvSplitter style="height: 120px">
+                      <PvSplitterPanel>Left</PvSplitterPanel>
+                      <PvSplitterPanel>Right</PvSplitterPanel>
+                    </PvSplitter>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Stepper -->
+            <v-expansion-panel id="component-stepper" value="component-stepper">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Stepper</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VStepper</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvStepper value="1">
+                      <PvStepList>
+                        <PvStep value="1">Step</PvStep>
+                      </PvStepList>
+
+                      <PvStepPanels>
+                        <PvStepPanel value="1">Content</PvStepPanel>
+                      </PvStepPanels>
+                    </PvStepper>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Stepper :items="['Step']" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- StepList -->
+            <v-expansion-panel id="component-steplist" value="component-steplist">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>StepList</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VStepperHeader</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvStepper value="1">
+                      <PvStepList>
+                        <PvStep value="1">Step</PvStep>
+                      </PvStepList>
+
+                      <PvStepPanels>
+                        <PvStepPanel value="1">Content</PvStepPanel>
+                      </PvStepPanels>
+                    </PvStepper>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Stepper :items="['Step']" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Step -->
+            <v-expansion-panel id="component-step" value="component-step">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Step</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VStepperItem</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvStepper value="1">
+                      <PvStepList>
+                        <PvStep value="1">Step</PvStep>
+                      </PvStepList>
+
+                      <PvStepPanels>
+                        <PvStepPanel value="1">Content</PvStepPanel>
+                      </PvStepPanels>
+                    </PvStepper>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Stepper :items="['Step']" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- StepPanels -->
+            <v-expansion-panel id="component-steppanels" value="component-steppanels">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>StepPanels</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VStepperWindow</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvStepper value="1">
+                      <PvStepList>
+                        <PvStep value="1">Step</PvStep>
+                      </PvStepList>
+
+                      <PvStepPanels>
+                        <PvStepPanel value="1">Content</PvStepPanel>
+                      </PvStepPanels>
+                    </PvStepper>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Stepper :items="['Step']" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- StepPanel -->
+            <v-expansion-panel id="component-steppanel" value="component-steppanel">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>StepPanel</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VStepperWindowItem</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvStepper value="1">
+                      <PvStepList>
+                        <PvStep value="1">Step</PvStep>
+                      </PvStepList>
+
+                      <PvStepPanels>
+                        <PvStepPanel value="1">Content</PvStepPanel>
+                      </PvStepPanels>
+                    </PvStepper>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Stepper :items="['Step']" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- StepItem -->
+            <v-expansion-panel id="component-stepitem" value="component-stepitem">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>StepItem</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VStepperVertical</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvStepper value="1">
+                      <PvStepItem value="1">
+                        <PvStep>Step</PvStep>
+                        <PvStepPanel>Content</PvStepPanel>
+                      </PvStepItem>
+                    </PvStepper>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Stepper :items="['Step']" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Tabs -->
+            <v-expansion-panel id="component-tabs" value="component-tabs">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Tabs</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTabs</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvTabs value="0">
+                      <PvTabList>
+                        <PvTab value="0">Tab</PvTab>
+                      </PvTabList>
+
+                      <PvTabPanels>
+                        <PvTabPanel value="0">Content</PvTabPanel>
+                      </PvTabPanels>
+                    </PvTabs>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Tabs v-model="tab">
+                      <Tab value="0">Tab</Tab>
+                    </Tabs>
+
+                    <TabPanels v-model="tab">
+                      <TabPanel value="0">Content</TabPanel>
+                    </TabPanels>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- TabList -->
+            <v-expansion-panel id="component-tablist" value="component-tablist">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>TabList</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvTabs value="0">
+                      <PvTabList>
+                        <PvTab value="0">Tab</PvTab>
+                      </PvTabList>
+
+                      <PvTabPanels>
+                        <PvTabPanel value="0">Content</PvTabPanel>
+                      </PvTabPanels>
+                    </PvTabs>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Tab -->
+            <v-expansion-panel id="component-tab" value="component-tab">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Tab</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTab</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvTabs value="0">
+                      <PvTabList>
+                        <PvTab value="0">Tab</PvTab>
+                      </PvTabList>
+
+                      <PvTabPanels>
+                        <PvTabPanel value="0">Content</PvTabPanel>
+                      </PvTabPanels>
+                    </PvTabs>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Tabs v-model="tab">
+                      <Tab value="0">Tab</Tab>
+                    </Tabs>
+
+                    <TabPanels v-model="tab">
+                      <TabPanel value="0">Content</TabPanel>
+                    </TabPanels>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- TabPanels -->
+            <v-expansion-panel id="component-tabpanels" value="component-tabpanels">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>TabPanels</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTabsWindow</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvTabs value="0">
+                      <PvTabList>
+                        <PvTab value="0">Tab</PvTab>
+                      </PvTabList>
+
+                      <PvTabPanels>
+                        <PvTabPanel value="0">Content</PvTabPanel>
+                      </PvTabPanels>
+                    </PvTabs>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Tabs v-model="tab">
+                      <Tab value="0">Tab</Tab>
+                    </Tabs>
+
+                    <TabPanels v-model="tab">
+                      <TabPanel value="0">Content</TabPanel>
+                    </TabPanels>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- TabPanel -->
+            <v-expansion-panel id="component-tabpanel" value="component-tabpanel">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>TabPanel</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VTabsWindowItem</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvTabs value="0">
+                      <PvTabList>
+                        <PvTab value="0">Tab</PvTab>
+                      </PvTabList>
+
+                      <PvTabPanels>
+                        <PvTabPanel value="0">Content</PvTabPanel>
+                      </PvTabPanels>
+                    </PvTabs>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Tabs v-model="tab">
+                      <Tab value="0">Tab</Tab>
+                    </Tabs>
+
+                    <TabPanels v-model="tab">
+                      <TabPanel value="0">Content</TabPanel>
+                    </TabPanels>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Toolbar -->
+            <v-expansion-panel id="component-toolbar" value="component-toolbar">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Toolbar</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VToolbar</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvToolbar>
+                      <template #start>Toolbar</template>
+                    </PvToolbar>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Toolbar />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ConfirmDialog -->
+            <v-expansion-panel id="component-confirmdialog" value="component-confirmdialog">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ConfirmDialog</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VConfirmEdit</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvConfirmDialog />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <ConfirmDialog v-model="basicValue" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ConfirmPopup -->
+            <v-expansion-panel id="component-confirmpopup" value="component-confirmpopup">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ConfirmPopup</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvConfirmPopup />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Dialog -->
+            <v-expansion-panel id="component-dialog" value="component-dialog">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Dialog</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VDialog</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvButton label="Show" @click="dialogVisible = true" />
+                    <PvDialog v-model:visible="dialogVisible" header="Dialog" modal>Content</PvDialog>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Dialog>
+                      <template #activator="{ props }">
+                        <Button v-bind="props" text="Show" />
+                      </template>
+
+                      <Card title="Dialog" />
+                    </Dialog>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Drawer -->
+            <v-expansion-panel id="component-drawer" value="component-drawer">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Drawer</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VNavigationDrawer</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvButton icon="pi pi-arrow-right" @click="drawerVisible = true" />
+                    <PvDrawer v-model:visible="drawerVisible">Content</PvDrawer>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Button icon="prime:arrow-right" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- DynamicDialog -->
+            <v-expansion-panel id="component-dynamicdialog" value="component-dynamicdialog">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>DynamicDialog</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvDynamicDialog />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Popover -->
+            <v-expansion-panel id="component-popover" value="component-popover">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Popover</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VMenu</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvButton icon="pi pi-share-alt" label="Share" @click="togglePopover" />
+                    <PvPopover ref="popoverRef">Content</PvPopover>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Popover>
+                      <template #activator="{ props }">
+                        <Button v-bind="props" prepend-icon="prime:share-alt" text="Share" />
+                      </template>
+
+                      <Card text="Content" />
+                    </Popover>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- FileUpload -->
+            <v-expansion-panel id="component-fileupload" value="component-fileupload">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>FileUpload</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VFileUpload</span>
+                  <v-chip color="warning" size="x-small" variant="flat">In progress</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvFileUpload mode="basic" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <FileUpload />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Breadcrumb -->
+            <v-expansion-panel id="component-breadcrumb" value="component-breadcrumb">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Breadcrumb</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VBreadcrumbs</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvBreadcrumb :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Breadcrumb :items="['Home', 'Section']" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ContextMenu -->
+            <v-expansion-panel id="component-contextmenu" value="component-contextmenu">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ContextMenu</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvContextMenu :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Dock -->
+            <v-expansion-panel id="component-dock" value="component-dock">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Dock</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvDock :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Menu -->
+            <v-expansion-panel id="component-menu" value="component-menu">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Menu</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VMenu</span>
+                  <v-chip color="warning" size="x-small" variant="flat">In progress</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvMenu :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Menu>
+                      <template #activator="{ props }">
+                        <Button v-bind="props" text="Open" />
+                      </template>
+
+                      <v-list :items="menuItems" />
+                    </Menu>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Menubar -->
+            <v-expansion-panel id="component-menubar" value="component-menubar">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Menubar</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvMenubar :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- MegaMenu -->
+            <v-expansion-panel id="component-megamenu" value="component-megamenu">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>MegaMenu</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvMegaMenu :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- PanelMenu -->
+            <v-expansion-panel id="component-panelmenu" value="component-panelmenu">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>PanelMenu</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VList</span>
+                  <v-chip color="warning" size="x-small" variant="flat">In progress</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvPanelMenu :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <PanelMenu :items="[{ title: 'Item', value: 0 }]" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- TieredMenu -->
+            <v-expansion-panel id="component-tieredmenu" value="component-tieredmenu">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>TieredMenu</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvTieredMenu :model="basicItems" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Chart -->
+            <v-expansion-panel id="component-chart" value="component-chart">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Chart</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <span class="text-medium-emphasis text-caption">Requires optional dependency (quill / chart.js)</span>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Message -->
+            <v-expansion-panel id="component-message" value="component-message">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Message</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VAlert</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvMessage>Message</PvMessage>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Message>Message</Message>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Toast -->
+            <v-expansion-panel id="component-toast" value="component-toast">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Toast</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VSnackbarQueue</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvButton label="Show" @click="showPvToast" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Button text="Show" @click="toasts = [{ title: 'Info', text: 'Message', timeout: 3000 }]" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Carousel -->
+            <v-expansion-panel id="component-carousel" value="component-carousel">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Carousel</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VCarousel</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvCarousel :num-scroll="1" :num-visible="1" :value="basicSlides">
+                      <template #item="{ data }">
+                        <div :style="{ background: data.bg, height: '120px' }">{{ data.title }}</div>
+                      </template>
+                    </PvCarousel>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+
+                    <Carousel>
+                      <v-carousel-item>
+                        <v-sheet class="d-flex align-center justify-center" color="surface-variant" :height="120">Slide</v-sheet>
+                      </v-carousel-item>
+                    </Carousel>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Galleria -->
+            <v-expansion-panel id="component-galleria" value="component-galleria">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Galleria</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvGalleria :value="basicSlides" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Image -->
+            <v-expansion-panel id="component-image" value="component-image">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Image</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VImg</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvImage alt="Image" src="https://primefaces.org/cdn/primevue/images/galleria/galleria10.jpg" :width="120" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Image alt="Image" src="https://primefaces.org/cdn/primevue/images/galleria/galleria10.jpg" :width="120" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ImageCompare -->
+            <v-expansion-panel id="component-imagecompare" value="component-imagecompare">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ImageCompare</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvImageCompare />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Avatar -->
+            <v-expansion-panel id="component-avatar" value="component-avatar">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Avatar</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VAvatar</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvAvatar label="P" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Avatar>V</Avatar>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Badge -->
+            <v-expansion-panel id="component-badge" value="component-badge">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Badge</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VBadge</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvBadge value="2" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Badge content="2" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- BlockUI -->
+            <v-expansion-panel id="component-blockui" value="component-blockui">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>BlockUI</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvBlockUI :blocked="true">Content</PvBlockUI>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Chip -->
+            <v-expansion-panel id="component-chip" value="component-chip">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Chip</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VChip</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvChip label="Chip" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Chip text="Chip" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Fluid -->
+            <v-expansion-panel id="component-fluid" value="component-fluid">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Fluid</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvFluid>
+                      <PvInputText />
+                    </PvFluid>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Inplace -->
+            <v-expansion-panel id="component-inplace" value="component-inplace">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Inplace</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+
+                    <PvInplace>
+                      <template #display>View content</template>
+                      <template #content>Editable content</template>
+                    </PvInplace>
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- MeterGroup -->
+            <v-expansion-panel id="component-metergroup" value="component-metergroup">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>MeterGroup</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VProgressLinear</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvMeterGroup :value="[{ label: 'Used', value: 15 }]" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <MeterGroup :model-value="15" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ProgressBar -->
+            <v-expansion-panel id="component-progressbar" value="component-progressbar">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ProgressBar</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VProgressLinear</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvProgressBar :value="50" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <ProgressBar :model-value="50" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ProgressSpinner -->
+            <v-expansion-panel id="component-progressspinner" value="component-progressspinner">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ProgressSpinner</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VProgressCircular</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvProgressSpinner />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <ProgressSpinner />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- ScrollTop -->
+            <v-expansion-panel id="component-scrolltop" value="component-scrolltop">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>ScrollTop</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvScrollTop />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Skeleton -->
+            <v-expansion-panel id="component-skeleton" value="component-skeleton">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Skeleton</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VSkeletonLoader</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvSkeleton />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Skeleton />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Tag -->
+            <v-expansion-panel id="component-tag" value="component-tag">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Tag</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>VChip</span>
+                  <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvTag value="Primary" />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <Tag text="Primary" />
+                  </v-sheet>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+
+            <!-- Terminal -->
+            <v-expansion-panel id="component-terminal" value="component-terminal">
+              <v-expansion-panel-title>
+                <div class="d-flex align-center flex-wrap ga-2">
+                  <span>Terminal</span>
+                  <span class="text-medium-emphasis">→</span>
+                  <span>—</span>
+                  <v-chip color="secondary" size="x-small" variant="flat">No equivalent</v-chip>
+                </div>
+              </v-expansion-panel-title>
+
+              <v-expansion-panel-text>
+                <div class="d-flex flex-wrap ga-4">
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+                    <PvTerminal />
+                  </v-sheet>
+
+                  <v-sheet border class="pa-4 compare-column" rounded="lg">
+                    <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+                    <v-alert density="compact" type="info" variant="tonal">No Vuetify equivalent defined yet.</v-alert>
                   </v-sheet>
                 </div>
               </v-expansion-panel-text>
@@ -157,10 +2966,6 @@
     <Toast v-model="toasts" />
   </v-app>
 </template>
-
-<script lang="ts">
-  import { defineComponent, type PropType, type VNode } from 'vue'
-</script>
 
 <script lang="ts" setup>
   import {
@@ -180,6 +2985,7 @@
     Checkbox as PvCheckbox,
     Chip as PvChip,
     ColorPicker as PvColorPicker,
+    Column as PvColumn,
     ConfirmDialog as PvConfirmDialog,
     ConfirmPopup as PvConfirmPopup,
     ContextMenu as PvContextMenu,
@@ -238,6 +3044,7 @@
     SpeedDial as PvSpeedDial,
     SplitButton as PvSplitButton,
     Splitter as PvSplitter,
+    SplitterPanel as PvSplitterPanel,
     Step as PvStep,
     StepItem as PvStepItem,
     StepList as PvStepList,
@@ -263,28 +3070,128 @@
     TreeTable as PvTreeTable,
     VirtualScroller as PvVirtualScroller,
   } from 'primevue'
-  import { computed, h, nextTick, ref, resolveComponent, shallowRef } from 'vue'
+  import { useToast } from 'primevue/usetoast'
+  import { computed, nextTick, ref } from 'vue'
   import {
+    VAlert,
+    VAutocomplete,
+    VAvatar,
+    VBadge,
+    VBreadcrumbs,
     VBtn,
-    VCarouselItem,
-    VFab,
+    VBtnToggle,
+    VCard,
+    VCarousel,
+    VCheckbox,
+    VChip,
+    VColorPicker,
+    VConfirmEdit,
+    VDataIterator,
+    VDataTable,
+    VDateInput,
+    VDialog,
+    VDivider,
+    VExpansionPanel,
+    VExpansionPanels,
+    VFileUpload,
+    VImg,
+    VLazy,
     VList,
-    VSheet,
-    VTimelineItem,
+    VMenu,
+    VNumberInput,
+    VOtpInput,
+    VPagination,
+    VProgressCircular,
+    VProgressLinear,
+    VRadio,
+    VRadioGroup,
+    VRating,
+    VSelect,
+    VSkeletonLoader,
+    VSlider,
+    VSnackbarQueue,
+    VSpeedDial,
+    VStepper,
+    VSwitch,
+    VTab,
+    VTabs,
+    VTabsWindow,
+    VTabsWindowItem,
+    VTextarea,
+    VTextField,
+    VTimeline,
+    VToolbar,
+    VTreeview,
+    VVirtualScroll,
   } from 'vuetify/components'
+  import { VMaskInput } from 'vuetify/labs/VMaskInput'
 
-  const ComponentRender = defineComponent({
-    name: 'ComponentRender',
-    props: {
-      render: {
-        type: Function as PropType<() => VNode | null>,
-        required: true,
-      },
-    },
-    setup (props) {
-      return props.render
-    },
-  })
+  // The Vuetify blueprint components are registered globally as PrimeVue-style
+  // aliases inside `plugins/vuetify.ts`. We rebuild the same aliases locally so
+  // the template can use them as explicit, correctly typed tags while keeping
+  // the Aura defaults (Vuetify resolves defaults by the component `name`).
+  function aura<T> (component: T, name: string): T {
+    return { ...(component as Record<string, unknown>), name, aliasName: (component as { name?: string }).name } as T
+  }
+
+  const AutoComplete = aura(VAutocomplete, 'AutoComplete')
+  const Checkbox = aura(VCheckbox, 'Checkbox')
+  const ColorPicker = aura(VColorPicker, 'ColorPicker')
+  const DatePicker = aura(VDateInput, 'DatePicker')
+  const InputMask = aura(VMaskInput, 'InputMask')
+  const InputNumber = aura(VNumberInput, 'InputNumber')
+  const InputOtp = aura(VOtpInput, 'InputOtp')
+  const InputText = aura(VTextField, 'InputText')
+  const Password = aura(VTextField, 'Password')
+  const Listbox = aura(VList, 'Listbox')
+  const MultiSelect = aura(VSelect, 'MultiSelect')
+  const Select = aura(VSelect, 'Select')
+  const RadioButtonGroup = aura(VRadioGroup, 'RadioButtonGroup')
+  const RadioButton = aura(VRadio, 'RadioButton')
+  const Rating = aura(VRating, 'Rating')
+  const SelectButton = aura(VBtnToggle, 'SelectButton')
+  const Slider = aura(VSlider, 'Slider')
+  const Textarea = aura(VTextarea, 'Textarea')
+  const ToggleButton = aura(VBtn, 'ToggleButton')
+  const ToggleSwitch = aura(VSwitch, 'ToggleSwitch')
+  const Button = aura(VBtn, 'Button')
+  const SpeedDial = aura(VSpeedDial, 'SpeedDial')
+  const DataTable = aura(VDataTable, 'DataTable')
+  const DataView = aura(VDataIterator, 'DataView')
+  const Paginator = aura(VPagination, 'Paginator')
+  const Timeline = aura(VTimeline, 'Timeline')
+  const Tree = aura(VTreeview, 'Tree')
+  const VirtualScroller = aura(VVirtualScroll, 'VirtualScroller')
+  const Accordion = aura(VExpansionPanels, 'Accordion')
+  const AccordionPanel = aura(VExpansionPanel, 'AccordionPanel')
+  const Card = aura(VCard, 'Card')
+  const DeferredContent = aura(VLazy, 'DeferredContent')
+  const Divider = aura(VDivider, 'Divider')
+  const Stepper = aura(VStepper, 'Stepper')
+  const Tabs = aura(VTabs, 'Tabs')
+  const Tab = aura(VTab, 'Tab')
+  const TabPanels = aura(VTabsWindow, 'TabPanels')
+  const TabPanel = aura(VTabsWindowItem, 'TabPanel')
+  const Toolbar = aura(VToolbar, 'Toolbar')
+  const ConfirmDialog = aura(VConfirmEdit, 'ConfirmDialog')
+  const Dialog = aura(VDialog, 'Dialog')
+  const Popover = aura(VMenu, 'Popover')
+  const Menu = aura(VMenu, 'Menu')
+  const FileUpload = aura(VFileUpload, 'FileUpload')
+  const Breadcrumb = aura(VBreadcrumbs, 'Breadcrumb')
+  const PanelMenu = aura(VList, 'PanelMenu')
+  const Message = aura(VAlert, 'Message')
+  const Toast = aura(VSnackbarQueue, 'Toast')
+  const Carousel = aura(VCarousel, 'Carousel')
+  const Image = aura(VImg, 'Image')
+  const Avatar = aura(VAvatar, 'Avatar')
+  const Badge = aura(VBadge, 'Badge')
+  const Chip = aura(VChip, 'Chip')
+  const Tag = aura(VChip, 'Tag')
+  const MeterGroup = aura(VProgressLinear, 'MeterGroup')
+  const ProgressBar = aura(VProgressLinear, 'ProgressBar')
+  const ProgressSpinner = aura(VProgressCircular, 'ProgressSpinner')
+  const Skeleton = aura(VSkeletonLoader, 'Skeleton')
 
   type MappingStatus = 'ready' | 'todo' | 'missing'
 
@@ -397,124 +3304,35 @@
     { id: 'component-terminal', primevue: 'Terminal', vuetify: null, status: 'missing' },
   ]
 
-  const expandedPanels = ref<number[]>([])
+  const expandedPanels = ref<string[]>([])
   const toasts = ref<any[]>([])
 
-  const basicValue = shallowRef<string | null>(null)
+  const basicValue = ref<string | null>(null)
+  const knobValue = ref(30)
+  const tab = ref('0')
+  const dialogVisible = ref(false)
+  const drawerVisible = ref(false)
+  const popoverRef = ref()
+
   const basicOptions = ['Apple', 'Banana', 'Cherry']
   const basicItems = [{ label: 'Item' }, { label: 'Item 2' }]
   const basicTree = [{ key: '0', label: 'Root', children: [{ key: '0-0', label: 'Child' }] }]
+  const vuetifyTree = [{ id: 0, title: 'Root', children: [{ id: 1, title: 'Child' }] }]
   const basicSlides = [{ title: 'Slide', bg: '#eff6ff' }]
   const basicTableData = [{ name: 'Item' }]
   const basicTimeline = [{ status: 'Step' }]
-  const tab = ref('0')
-  const visible = ref(false)
+  const menuItems = basicOptions.map((option, index) => ({ title: option, value: index }))
+  const orderListValue = ref([{ label: 'Item' }, { label: 'Item 2' }])
+  const pickListValue = ref([[{ label: 'Item' }], [{ label: 'Item 2' }]])
+  const orgChartValue = { key: '0', label: 'Root', children: [{ key: '0-0', label: 'Child' }] }
+
+  const toast = useToast()
 
   const statusCounts = computed(() => ({
     ready: componentMappings.filter(m => m.status === 'ready').length,
     todo: componentMappings.filter(m => m.status === 'todo').length,
     missing: componentMappings.filter(m => m.status === 'missing').length,
   }))
-
-  const pvComponents: Record<string, any> = {
-    AutoComplete: PvAutoComplete,
-    CascadeSelect: PvCascadeSelect,
-    Checkbox: PvCheckbox,
-    ColorPicker: PvColorPicker,
-    DatePicker: PvDatePicker,
-    FloatLabel: PvFloatLabel,
-    IconField: PvIconField,
-    IftaLabel: PvIftaLabel,
-    InputGroup: PvInputGroup,
-    InputMask: PvInputMask,
-    InputNumber: PvInputNumber,
-    InputOtp: PvInputOtp,
-    InputText: PvInputText,
-    Knob: PvKnob,
-    Listbox: PvListbox,
-    MultiSelect: PvMultiSelect,
-    Password: PvPassword,
-    RadioButton: PvRadioButton,
-    RadioButtonGroup: PvRadioButtonGroup,
-    Rating: PvRating,
-    Select: PvSelect,
-    SelectButton: PvSelectButton,
-    Slider: PvSlider,
-    Textarea: PvTextarea,
-    ToggleButton: PvToggleButton,
-    ToggleSwitch: PvToggleSwitch,
-    TreeSelect: PvTreeSelect,
-    Button: PvButton,
-    SpeedDial: PvSpeedDial,
-    SplitButton: PvSplitButton,
-    DataTable: PvDataTable,
-    DataView: PvDataView,
-    OrderList: PvOrderList,
-    OrganizationChart: PvOrganizationChart,
-    Paginator: PvPaginator,
-    PickList: PvPickList,
-    Timeline: PvTimeline,
-    Tree: PvTree,
-    TreeTable: PvTreeTable,
-    VirtualScroller: PvVirtualScroller,
-    Accordion: PvAccordion,
-    AccordionPanel: PvAccordionPanel,
-    AccordionHeader: PvAccordionHeader,
-    AccordionContent: PvAccordionContent,
-    Card: PvCard,
-    DeferredContent: PvDeferredContent,
-    Divider: PvDivider,
-    Fieldset: PvFieldset,
-    Panel: PvPanel,
-    ScrollPanel: PvScrollPanel,
-    Splitter: PvSplitter,
-    Stepper: PvStepper,
-    StepList: PvStepList,
-    Step: PvStep,
-    StepPanels: PvStepPanels,
-    StepPanel: PvStepPanel,
-    StepItem: PvStepItem,
-    Tabs: PvTabs,
-    TabList: PvTabList,
-    Tab: PvTab,
-    TabPanels: PvTabPanels,
-    TabPanel: PvTabPanel,
-    Toolbar: PvToolbar,
-    ConfirmDialog: PvConfirmDialog,
-    ConfirmPopup: PvConfirmPopup,
-    Dialog: PvDialog,
-    Drawer: PvDrawer,
-    DynamicDialog: PvDynamicDialog,
-    Popover: PvPopover,
-    FileUpload: PvFileUpload,
-    Breadcrumb: PvBreadcrumb,
-    ContextMenu: PvContextMenu,
-    Dock: PvDock,
-    Menu: PvMenu,
-    Menubar: PvMenubar,
-    MegaMenu: PvMegaMenu,
-    PanelMenu: PvPanelMenu,
-    TieredMenu: PvTieredMenu,
-    Message: PvMessage,
-    Toast: PvToast,
-    Carousel: PvCarousel,
-    Galleria: PvGalleria,
-    Image: PvImage,
-    ImageCompare: PvImageCompare,
-    Avatar: PvAvatar,
-    Badge: PvBadge,
-    BlockUI: PvBlockUI,
-    Chip: PvChip,
-    Fluid: PvFluid,
-    Inplace: PvInplace,
-    MeterGroup: PvMeterGroup,
-    ProgressBar: PvProgressBar,
-    ProgressSpinner: PvProgressSpinner,
-    ScrollTop: PvScrollTop,
-    Skeleton: PvSkeleton,
-    Tag: PvTag,
-    Terminal: PvTerminal,
-  }
 
   function getStatusColor (status: MappingStatus) {
     if (status === 'ready') return 'success'
@@ -529,383 +3347,20 @@
   }
 
   function scrollToComponent (id: string) {
-    const index = componentMappings.findIndex(m => m.id === id)
-    if (index !== -1 && !expandedPanels.value.includes(index)) {
-      expandedPanels.value = [...expandedPanels.value, index]
+    if (!expandedPanels.value.includes(id)) {
+      expandedPanels.value = [...expandedPanels.value, id]
     }
     nextTick(() => {
       document.querySelector(`#${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     })
   }
 
-  function unavailable (message = 'Not available in demo') {
-    return h('span', { class: 'text-medium-emphasis text-caption' }, message)
+  function showPvToast () {
+    toast.add({ severity: 'info', summary: 'Info', detail: 'Message', life: 3000 })
   }
 
-  function renderMinimalAccordionPv () {
-    return h(PvAccordion, {}, () => [
-      h(PvAccordionPanel, { value: '0' }, () => [
-        h(PvAccordionHeader, {}, () => 'Header'),
-        h(PvAccordionContent, {}, () => 'Content'),
-      ]),
-    ])
-  }
-
-  function renderMinimalTabsPv () {
-    return h(PvTabs, { value: '0' }, () => [
-      h(PvTabList, {}, () => h(PvTab, { value: '0' }, () => 'Tab')),
-      h(PvTabPanels, {}, () => h(PvTabPanel, { value: '0' }, () => 'Content')),
-    ])
-  }
-
-  function renderMinimalStepperPv () {
-    return h(PvStepper, { value: '1' }, () => [
-      h(PvStepList, {}, () => h(PvStep, { value: '1' }, () => 'Step')),
-      h(PvStepPanels, {}, () => h(PvStepPanel, { value: '1' }, () => 'Content')),
-    ])
-  }
-
-  function renderMinimalAccordionV () {
-    return h(resolveComponent('Accordion'), {}, () => [
-      h(resolveComponent('AccordionPanel'), { title: 'Header', text: 'Content' }),
-    ])
-  }
-
-  function renderMinimalTabsV () {
-    return [
-      h(resolveComponent('Tabs'), { 'modelValue': tab.value, 'onUpdate:modelValue': (v: string) => {
-        tab.value = v
-      } }, () => [
-        h(resolveComponent('Tab'), { value: '0' }, () => 'Tab'),
-      ]),
-      h(resolveComponent('TabPanels'), { 'modelValue': tab.value, 'onUpdate:modelValue': (v: string) => {
-        tab.value = v
-      } }, () => [
-        h(resolveComponent('TabPanel'), { value: '0' }, () => 'Content'),
-      ]),
-    ]
-  }
-
-  function renderMinimalStepperV () {
-    return h(resolveComponent('Stepper'), { items: ['Step'] }, () => [
-      h('template', { '#item.1': '' }, () => 'Content'),
-    ])
-  }
-
-  function renderPrimeVueDemo (name: string): VNode | null {
-    switch (name) {
-      case 'Accordion':
-      case 'AccordionPanel':
-      case 'AccordionHeader':
-      case 'AccordionContent': {
-        return renderMinimalAccordionPv()
-      }
-      case 'Tabs':
-      case 'TabList':
-      case 'Tab':
-      case 'TabPanels':
-      case 'TabPanel': {
-        return renderMinimalTabsPv()
-      }
-      case 'Stepper':
-      case 'StepList':
-      case 'Step':
-      case 'StepPanels':
-      case 'StepPanel': {
-        return renderMinimalStepperPv()
-      }
-      case 'RadioButtonGroup': {
-        return h(PvRadioButtonGroup, { 'modelValue': basicValue.value, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } }, () => h(PvRadioButton, { value: 'a' }))
-      }
-      case 'RadioButton': {
-        return h(PvRadioButtonGroup, { 'modelValue': basicValue.value, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } }, () => h(PvRadioButton, { value: 'a' }))
-      }
-      case 'InputGroup': {
-        return h(PvInputGroup, {}, () => [h(PvInputGroupAddon, {}, () => '$'), h(PvInputText)])
-      }
-      case 'Select':
-      case 'MultiSelect':
-      case 'Listbox': {
-        return h(pvComponents[name], { 'modelValue': basicValue.value, 'options': basicOptions, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } })
-      }
-      case 'SelectButton': {
-        return h(PvSelectButton, { 'modelValue': basicValue.value, 'options': basicOptions, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } })
-      }
-      case 'Tree':
-      case 'TreeSelect': {
-        return h(pvComponents[name], { 'modelValue': basicValue.value, 'value': basicTree, 'options': basicTree, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } })
-      }
-      case 'Carousel': {
-        return h(PvCarousel, { value: basicSlides, numVisible: 1, numScroll: 1 }, {
-          item: ({ data }: { data: { title: string, bg: string } }) => h('div', { style: { background: data.bg, height: '120px' } }, data.title),
-        })
-      }
-      case 'DataTable': {
-        return h(PvDataTable, { value: basicTableData })
-      }
-      case 'DataView': {
-        return h(PvDataView, { value: basicTableData })
-      }
-      case 'Timeline': {
-        return h(PvTimeline, { value: basicTimeline }, { content: ({ item }: { item: { status: string } }) => item.status })
-      }
-      case 'Breadcrumb': {
-        return h(PvBreadcrumb, { model: basicItems })
-      }
-      case 'Paginator': {
-        return h(PvPaginator, { rows: 10, totalRecords: 50 })
-      }
-      case 'VirtualScroller': {
-        return h(PvVirtualScroller, { items: basicOptions, itemSize: 32, style: { height: '120px' } }, { item: ({ item }: { item: string }) => h('div', item) })
-      }
-      case 'MeterGroup': {
-        return h(PvMeterGroup, { value: [{ label: 'Used', value: 15 }] })
-      }
-      case 'ProgressBar': {
-        return h(PvProgressBar, { value: 50 })
-      }
-      case 'Image': {
-        return h(PvImage, { src: 'https://primefaces.org/cdn/primevue/images/galleria/galleria10.jpg', alt: 'Image', width: 120 })
-      }
-      case 'Card': {
-        return h(PvCard, {}, { title: () => 'Card', content: () => 'Content' })
-      }
-      case 'Toolbar': {
-        return h(PvToolbar, {}, { start: () => 'Toolbar' })
-      }
-      case 'Message': {
-        return h(PvMessage, {}, () => 'Message')
-      }
-      case 'Toast': {
-        return h(PvButton, { label: 'Show', onClick: () => {} })
-      }
-      case 'Dialog': {
-        return h(PvButton, { label: 'Show', onClick: () => {
-          visible.value = true
-        } })
-      }
-      case 'Drawer': {
-        return h(PvButton, { icon: 'pi pi-arrow-right', onClick: () => {
-          visible.value = true
-        } })
-      }
-      case 'Avatar': {
-        return h(PvAvatar)
-      }
-      case 'Badge': {
-        return h(PvBadge)
-      }
-      case 'Tag': {
-        return h(PvTag, { value: 'Primary' })
-      }
-      case 'Button': {
-        return h(PvButton, {}, () => 'Button')
-      }
-      case 'ToggleButton': {
-        return h(PvToggleButton, { modelValue: false })
-      }
-      case 'Chip': {
-        return h(PvChip, { label: 'Chip' })
-      }
-      case 'SpeedDial': {
-        return h(PvSpeedDial, { model: [{ icon: 'pi pi-pencil' }] })
-      }
-      case 'Menu':
-      case 'PanelMenu': {
-        return h(pvComponents[name], { model: basicItems })
-      }
-      case 'Editor':
-      case 'Chart': {
-        return unavailable('Requires optional dependency (quill / chart.js)')
-      }
-      default: {
-        const Comp = pvComponents[name]
-        if (!Comp) return unavailable()
-        return h(Comp)
-      }
-    }
-  }
-
-  function renderVuetifyDemo (name: string): VNode | null {
-    switch (name) {
-      case 'Accordion':
-      case 'AccordionPanel':
-      case 'AccordionHeader':
-      case 'AccordionContent': {
-        return renderMinimalAccordionV()
-      }
-      case 'Tabs':
-      case 'Tab':
-      case 'TabPanels':
-      case 'TabPanel': {
-        return h('div', {}, renderMinimalTabsV())
-      }
-      case 'Stepper':
-      case 'StepList':
-      case 'Step':
-      case 'StepPanels':
-      case 'StepPanel':
-      case 'StepItem': {
-        return renderMinimalStepperV()
-      }
-      case 'RadioButtonGroup': {
-        return h(resolveComponent('RadioButtonGroup'), { 'modelValue': basicValue.value, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } }, () => h(resolveComponent('RadioButton'), { value: 'a' }))
-      }
-      case 'RadioButton': {
-        return h(resolveComponent('RadioButtonGroup'), { 'modelValue': basicValue.value, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } }, () => h(resolveComponent('RadioButton'), { value: 'a' }))
-      }
-      case 'Select':
-      case 'MultiSelect': {
-        return h(resolveComponent(name), { 'modelValue': basicValue.value, 'items': basicOptions, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } })
-      }
-      case 'Listbox': {
-        return h(resolveComponent('Listbox'), { items: basicOptions })
-      }
-      case 'SelectButton': {
-        return h(resolveComponent('SelectButton'), { 'modelValue': basicValue.value, 'onUpdate:modelValue': (v: string) => {
-          basicValue.value = v
-        } }, () => basicOptions.map(o => h(resolveComponent('Button'), { text: o, value: o })))
-      }
-      case 'Tree': {
-        return h(resolveComponent('Tree'), { items: [{ id: 0, title: 'Root', children: [{ id: 1, title: 'Child' }] }] })
-      }
-      case 'Carousel': {
-        return h(resolveComponent('Carousel'), {}, () => h(VCarouselItem, {}, () => h(VSheet, { height: 120, color: 'surface-variant', class: 'd-flex align-center justify-center' }, () => 'Slide')))
-      }
-      case 'DataTable': {
-        return h(resolveComponent('DataTable'), { items: basicTableData, headers: [{ title: 'Name', key: 'name' }] })
-      }
-      case 'DataView': {
-        return h(resolveComponent('DataView'), { items: basicTableData })
-      }
-      case 'Timeline': {
-        return h(resolveComponent('Timeline'), {}, () => h(VTimelineItem, {}, () => 'Step'))
-      }
-      case 'Breadcrumb': {
-        return h(resolveComponent('Breadcrumb'), { items: ['Home', 'Section'] })
-      }
-      case 'Paginator': {
-        return h(resolveComponent('Paginator'), { length: 5 })
-      }
-      case 'VirtualScroller': {
-        return h(resolveComponent('VirtualScroller'), { items: basicOptions, height: 120 }, { default: ({ item }: { item: string }) => h('div', item) })
-      }
-      case 'MeterGroup': {
-        return h(resolveComponent('MeterGroup'), { modelValue: 15 })
-      }
-      case 'ProgressBar': {
-        return h(resolveComponent('ProgressBar'), { modelValue: 50 })
-      }
-      case 'Image': {
-        return h(resolveComponent('Image'), { src: 'https://primefaces.org/cdn/primevue/images/galleria/galleria10.jpg', alt: 'Image', width: 120 })
-      }
-      case 'Card': {
-        return h(resolveComponent('Card'), { title: 'Card', text: 'Content' })
-      }
-      case 'Toolbar': {
-        return h(resolveComponent('Toolbar'))
-      }
-      case 'Message': {
-        return h(resolveComponent('Message'), {}, () => 'Message')
-      }
-      case 'Toast': {
-        return h(resolveComponent('Button'), { text: 'Show', onClick: () => {
-          toasts.value = [{ title: 'Info', text: 'Message', timeout: 3000 }]
-        } })
-      }
-      case 'Dialog': {
-        return h(resolveComponent('Dialog'), {}, {
-          activator: ({ props }: { props: Record<string, unknown> }) => h(resolveComponent('Button'), { ...props, text: 'Show' }),
-          default: () => h(resolveComponent('Card'), { title: 'Dialog' }),
-        })
-      }
-      case 'Drawer': {
-        return h('div', {}, [
-          h(resolveComponent('Button'), { icon: 'prime:arrow-right', onClick: () => {
-            visible.value = true
-          } }),
-        ])
-      }
-      case 'Avatar': {
-        return h(resolveComponent('Avatar'))
-      }
-      case 'Badge': {
-        return h(resolveComponent('Badge'), { content: '2' })
-      }
-      case 'Tag': {
-        return h(resolveComponent('Tag'), { text: 'Primary' })
-      }
-      case 'Button': {
-        return h(resolveComponent('Button'), { text: 'Button' })
-      }
-      case 'ToggleButton': {
-        return h(resolveComponent('ToggleButton'))
-      }
-      case 'Chip': {
-        return h(resolveComponent('Chip'), { text: 'Chip' })
-      }
-      case 'SpeedDial': {
-        return h(resolveComponent('SpeedDial'), {}, {
-          activator: ({ props }: { props: Record<string, unknown> }) => h(VFab, { ...props, icon: 'prime:plus' }),
-          default: () => h(VBtn, { icon: 'prime:pencil' }),
-        })
-      }
-      case 'Menu': {
-        return h(resolveComponent('Menu'), { modelValue: true }, () => h(VList, { items: basicOptions.map((o, i) => ({ title: o, value: i })) }))
-      }
-      case 'PanelMenu': {
-        return h(resolveComponent('PanelMenu'), { items: [{ title: 'Item', value: 0 }] })
-      }
-      case 'FileUpload': {
-        return h(resolveComponent('FileUpload'))
-      }
-      case 'Popover': {
-        return h(resolveComponent('Button'), { text: 'Share', prependIcon: 'prime:share-alt' })
-      }
-      case 'ConfirmDialog': {
-        return h(resolveComponent('ConfirmDialog'))
-      }
-      case 'Password': {
-        return h(resolveComponent('Password'))
-      }
-      case 'InputText':
-      case 'Textarea':
-      case 'InputNumber':
-      case 'InputMask':
-      case 'InputOtp':
-      case 'Checkbox':
-      case 'ToggleSwitch':
-      case 'Slider':
-      case 'Rating':
-      case 'ColorPicker':
-      case 'DatePicker':
-      case 'AutoComplete':
-      case 'Divider':
-      case 'Skeleton':
-      case 'ProgressSpinner':
-      case 'DeferredContent': {
-        return h(resolveComponent(name))
-      }
-      default: {
-        return h(resolveComponent(name))
-      }
-    }
+  function togglePopover (event: Event) {
+    popoverRef.value?.toggle(event)
   }
 </script>
 
