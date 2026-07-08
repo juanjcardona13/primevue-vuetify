@@ -3,8 +3,104 @@
     <!-- elevation-2 border rounded-md ma-10" style="width: 420px;"> -->
     Vuetify
 
+
+    <!-- Message -->
+    <!-- <Message>Message Content</Message> -->
+
+    <!-- Toast -->
+    <!-- <div class="d-flex flex-wrap ga-2">
+      <v-btn text="Success" @click="showToast('success')" />
+      <v-btn text="Info" @click="showToast('info')" />
+      <v-btn text="Warn" @click="showToast('warning')" />
+      <v-btn text="Error" @click="showToast('error')" />
+      <v-btn text="Secondary" @click="showToast('secondary')" />
+      <v-btn text="Contrast" @click="showToast('contrast')" />
+    </div>
+    <Toast v-model="toasts">
+      <template #actions="{ props: closeProps }">
+        <v-btn icon="prime:times" size="x-small" variant="text" v-bind="closeProps" />
+      </template>
+</Toast> -->
+
+    <!-- Carousel -->
+    <!-- <Carousel>
+      <v-carousel-item v-for="slide in carouselSlides" :key="slide.title">
+        <v-sheet :color="slide.color" height="100%" class="d-flex align-center justify-center text-h6">
+          {{ slide.title }}
+        </v-sheet>
+      </v-carousel-item>
+    </Carousel> -->
+
+    <!-- Image -->
+    <!-- <Image
+      src="https://primefaces.org/cdn/primevue/images/galleria/galleria10.jpg"
+      alt="Image"
+      width="250"
+    /> -->
+
+    <!-- Avatar -->
+    <!-- <div class="d-flex align-center ga-2">
+      <Avatar text="P" />
+      <Avatar icon="prime:user" />
+      <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" />
+    </div> -->
+
+    <!-- Badge -->
+    <!-- <div class="d-flex align-center ga-2">
+      <Badge content="2" rounded="circle" />
+      <Badge content="10" />
+    </div> -->
+
+    <!-- Chip -->
+    <!-- <div class="d-flex flex-wrap ga-2">
+      <Chip text="Action" />
+      <Chip text="Comedy" />
+      <Chip text="Mystery" />
+    </div> -->
+
+    <!-- ProgressBar -->
+    <!-- <ProgressBar :model-value="50">
+      <template #default="{ value }">{{ Math.round(value) }}%</template>
+    </ProgressBar> -->
+
+    <!-- ProgressSpinner -->
+    <!-- <ProgressSpinner /> -->
+
+    <!-- MeterGroup -->
+    <!-- <div class="d-flex flex-column ga-4">
+      <MeterGroup :model-value="15" />
+      <div class="d-flex align-center ga-2">
+        <span style="width: 0.5rem; height: 0.5rem; border-radius: 100%; background: rgb(var(--v-theme-primary));" />
+        <span>Space used</span>
+      </div>
+    </div> -->
+
+    <!-- Skeleton -->
+    <!-- <Skeleton /> -->
+
+    <!-- Tag -->
+    <div class="d-flex align-center ga-2">
+      <Tag text="Primary" />
+      <Tag color="tag-success" text="Success" />
+      <Tag color="tag-info" text="Info" />
+      <Tag color="tag-warn" text="Warn" />
+      <Tag color="tag-danger" text="Danger" />
+    </div>
+
+
+    <!-- PanelMenu -->
+    <!-- <PanelMenu :items="items5" /> -->
+
+
+
+    <!-- Menu -->
+    <!-- <Menu :model-value="true">
+    <v-list :items="items4" />
+    </Menu> -->
+
+
     <!-- Breadcrumb -->
-    <Breadcrumb :items="['Home', 'Electronics', 'Computer']" />
+    <!-- <Breadcrumb :items="['Home', 'Electronics', 'Computer']" /> -->
 
     <!-- FileUpload -->
     <!-- <FileUpload /> -->
@@ -299,10 +395,164 @@ const items = ref([
   }
 ])
 
+const items4 = ref([
+  {
+    title: 'Electronics',
+    value: 0,
+    props: {
+      prependIcon: 'prime:home'
+    }
+  },
+  {
+    title: 'Computer',
+    value: 1,
+    props: {
+      prependIcon: 'prime:home'
+    }
+  },
+])
+
+const items5 = ref([
+  {
+    title: 'Files',
+    props: {
+      prependIcon: 'prime:file',
+    },
+    children: [
+      {
+        title: 'Documents',
+        props: {
+          prependIcon: 'prime:file',
+        },
+        children: [
+          {
+            title: 'Invoices',
+            props: {
+              prependIcon: 'prime:file-pdf',
+            },
+            children: [
+              {
+                title: 'Pending',
+                props: {
+                  prependIcon: 'prime:stop'
+                },
+              },
+              {
+                title: 'Paid',
+                props: {
+                  prependIcon: 'prime:check-circle'
+                },
+              }
+            ]
+          },
+          {
+            title: 'Clients',
+            props: {
+              prependIcon: 'prime:users'
+            },
+          }
+        ]
+      },
+      {
+        title: 'Images',
+        props: {
+          prependIcon: 'prime:image',
+        },
+        children: [
+          {
+            title: 'Logos',
+            props: {
+              prependIcon: 'prime:image'
+            },
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Cloud',
+    props: {
+      prependIcon: 'prime:cloud',
+    },
+    children: [
+      {
+        title: 'Upload',
+        props: {
+          prependIcon: 'prime:cloud-upload'
+        },
+      },
+      {
+        title: 'Download',
+        props: {
+          prependIcon: 'prime:cloud-download'
+        },
+      },
+      {
+        title: 'Sync',
+        props: {
+          prependIcon: 'prime:refresh'
+        },
+      }
+    ]
+  },
+  {
+    title: 'Devices',
+    props: {
+      prependIcon: 'prime:desktop',
+    },
+    children: [
+      {
+        title: 'Phone',
+        props: {
+          prependIcon: 'prime:mobile'
+        },
+      },
+      {
+        title: 'Desktop',
+        props: {
+          prependIcon: 'prime:desktop'
+        },
+      },
+      {
+        title: 'Tablet',
+        props: {
+          prependIcon: 'prime:tablet'
+        },
+      }
+    ]
+  }
+]);
+
+
+const carouselSlides = [
+  { title: 'Slide 1', color: 'severity-info' },
+  { title: 'Slide 2', color: 'severity-success' },
+  { title: 'Slide 3', color: 'severity-warning' },
+]
 
 const fav = ref(true)
 const menu = ref(false)
 const message = ref(false)
 const hints = ref(true)
+
+const toasts = ref<any[]>([])
+const toastConfig: Record<string, { title: string, icon: string }> = {
+  success: { title: 'Success', icon: 'prime:check-circle' },
+  info: { title: 'Info', icon: 'prime:info-circle' },
+  warning: { title: 'Warn', icon: 'prime:exclamation-triangle' },
+  error: { title: 'Error', icon: 'prime:times-circle' },
+  secondary: { title: 'Secondary', icon: 'prime:info-circle' },
+  contrast: { title: 'Contrast', icon: 'prime:info-circle' },
+}
+function showToast(severity: string) {
+  const cfg = toastConfig[severity]
+  toasts.value = [...toasts.value, {
+    title: cfg.title,
+    text: 'Message Content',
+    color: `severity-${severity}`,
+    prependIcon: cfg.icon,
+    timeout: 3000,
+  }]
+}
 
 </script>

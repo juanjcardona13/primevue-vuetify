@@ -1,0 +1,22 @@
+.aura-carousel {
+  .v-carousel__controls__item {
+    width: 2rem;
+    min-width: 2rem;
+    height: 0.5rem;
+    border-radius: 6px;
+    padding: 0;
+    background: rgb(var(--v-theme-surface-variant));
+
+    .v-icon {
+      display: none;
+    }
+
+    &:hover {
+      background: rgb(var(--v-theme-surface-bright));
+    }
+
+    &.v-btn--active {
+      background: rgb(var(--v-theme-primary));
+    }
+  }
+}

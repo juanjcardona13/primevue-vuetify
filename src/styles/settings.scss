@@ -126,6 +126,7 @@
         "0\\.25": 1px,
         "0\\.5": 2px,
         "0\\.75": 3px,
+        "0\\.875": 3.5px,
         "1": 4px,
         "1\\.25": 5px,
         "1\\.5": 6px,
@@ -313,6 +314,51 @@
 
     $otp-input-content-height: 58px,
     $otp-input-field-font-size: 1rem,
+
+    // MESSAGE (VAlert)
+    $alert-padding: 12px,
+    $alert-density: ('default': 0, 'comfortable': -0.5, 'compact': -1, 'tiny': -1.5),
+    $alert-prepend-margin-inline-end: 8px,
+    $alert-prepend-icon-size: 1.125rem,
+
+    // TOAST (VSnackbar / VSnackbarQueue)
+    $snackbar-wrapper-min-width: 25rem,
+    $snackbar-wrapper-max-width: 25rem,
+    $snackbar-wrapper-min-height: auto,
+    $snackbar-title-font-weight: 500,
+    $snackbar-font-size: 0.875rem,
+    $snackbar-content-padding: 0.75rem 1rem,
+    $snackbar-prepend-margin-inline: 1rem 0.5rem,
+
+    // AVATAR
+    $avatar-background: rgb(var(--v-theme-surface-variant)),
+    $avatar-color: rgb(var(--v-theme-on-surface)),
+    $avatar-border-radius: 6px,
+    $avatar-elevation: 0,
+    $avatar-height: 2rem,
+    $avatar-width: 2rem,
+
+    // BADGE
+    $badge-font-weight: 700,
+    $badge-height: 1.5rem,
+    $badge-min-width: 1.5rem,
+    $badge-padding: 0 0.5rem,
+    $badge-wrapper-margin: 0,
+
+    // CHIP
+    $chip-background: rgb(var(--v-theme-secondary)),
+    $chip-color: rgb(var(--v-theme-on-surface)),
+    $chip-font-size: 1rem,
+
+    // SKELETON
+    $skeleton-loader-border-radius: 6px,
+    $skeleton-loader-background: transparent,
+
+    // CAROUSEL
+    $carousel-dot-margin: 0 4px,
+    $carousel-dot-inactive-opacity: 1,
+    $carousel-controls-bg: transparent,
+    $carousel-controls-size: 50px,
 
     // TIMELINE
     $timeline-dot-divider-background: rgb(var(--v-theme-surface-variant)),

@@ -14,6 +14,12 @@ import '@/styles/overrides/timeline.scss'
 import '@/styles/overrides/treeview.scss'
 import '@/styles/overrides/stepper.scss'
 import '@/styles/overrides/tabs.scss'
+import '@/styles/overrides/panelmenu.scss'
+import '@/styles/overrides/message.scss'
+import '@/styles/overrides/toast.scss'
+import '@/styles/overrides/carousel.scss'
+import '@/styles/overrides/progressspinner.scss'
+import '@/styles/overrides/skeleton.scss'
 import { 
   VAutocomplete, 
   VCheckbox,
@@ -129,6 +135,49 @@ export default createVuetify({
             'primary-hover': '#059669',
             'primary-activated': '#047857',
             'border-color': '#e2e8f0',
+
+            // Severity surfaces (PrimeVue Aura → Message, Toast, InlineMessage…)
+            'severity-info': '#eff6ff',
+            'on-severity-info': '#2563eb',
+            'severity-info-border': '#bfdbfe',
+            'severity-info-hover': '#dbeafe',
+
+            'severity-success': '#f0fdf4',
+            'on-severity-success': '#16a34a',
+            'severity-success-border': '#bbf7d0',
+            'severity-success-hover': '#dcfce7',
+
+            'severity-warning': '#fefce8',
+            'on-severity-warning': '#ca8a04',
+            'severity-warning-border': '#fef08a',
+            'severity-warning-hover': '#fef9c3',
+
+            'severity-error': '#fef2f2',
+            'on-severity-error': '#dc2626',
+            'severity-error-border': '#fecaca',
+            'severity-error-hover': '#fee2e2',
+
+            'severity-secondary': '#f1f5f9',
+            'on-severity-secondary': '#475569',
+            'severity-secondary-border': '#e2e8f0',
+            'severity-secondary-hover': '#e2e8f0',
+
+            'severity-contrast': '#0f172a',
+            'on-severity-contrast': '#f8fafc',
+            'severity-contrast-border': '#020617',
+            'severity-contrast-hover': '#1e293b',
+
+            // Tag surfaces (PrimeVue Aura Tag → .100 background / .700 text)
+            'tag-primary': '#d1fae5',
+            'on-tag-primary': '#047857',
+            'tag-success': '#dcfce7',
+            'on-tag-success': '#15803d',
+            'tag-info': '#e0f2fe',
+            'on-tag-info': '#0369a1',
+            'tag-warn': '#ffedd5',
+            'on-tag-warn': '#c2410c',
+            'tag-danger': '#fee2e2',
+            'on-tag-danger': '#b91c1c',
           },
           variables: {
             'border-color': '#e2e8f0',
@@ -189,6 +238,49 @@ export default createVuetify({
             'field-border-color': '#52525b',
             'field-border-hover-color': '#71717a',
             'primary-hover': '#6ee7b7',
+
+            // Severity surfaces (PrimeVue Aura → Message, Toast, InlineMessage…)
+            'severity-info': '#1c2541',
+            'on-severity-info': '#3b82f6',
+            'severity-info-border': '#1e3a5f',
+            'severity-info-hover': '#253052',
+
+            'severity-success': '#1a2e24',
+            'on-severity-success': '#22c55e',
+            'severity-success-border': '#14532d',
+            'severity-success-hover': '#1f3d2f',
+
+            'severity-warning': '#2a2419',
+            'on-severity-warning': '#eab308',
+            'severity-warning-border': '#713f12',
+            'severity-warning-hover': '#352c1a',
+
+            'severity-error': '#2a1c1c',
+            'on-severity-error': '#ef4444',
+            'severity-error-border': '#7f1d1d',
+            'severity-error-hover': '#3d2424',
+
+            'severity-secondary': '#27272a',
+            'on-severity-secondary': '#d4d4d8',
+            'severity-secondary-border': '#3f3f46',
+            'severity-secondary-hover': '#3f3f46',
+
+            'severity-contrast': '#ffffff',
+            'on-severity-contrast': '#09090b',
+            'severity-contrast-border': '#f4f4f5',
+            'severity-contrast-hover': '#f4f4f5',
+
+            // Tag surfaces (PrimeVue Aura Tag dark → .500 @16% over surface / .300 text)
+            'tag-primary': '#17322b',
+            'on-tag-primary': '#6ee7b7',
+            'tag-success': '#1a3426',
+            'on-tag-success': '#86efac',
+            'tag-info': '#162f3c',
+            'on-tag-info': '#7dd3fc',
+            'tag-warn': '#3c271a',
+            'on-tag-warn': '#fdba74',
+            'tag-danger': '#3a1f22',
+            'on-tag-danger': '#fca5a5',
           },
           variables: {
             'border-color': '#3f3f46',
@@ -283,19 +375,13 @@ export default createVuetify({
       // DynamicDialog: '',
       Popover: VMenu,
       FileUpload: VFileUpload, // TODO
-      
-
-
-
       Breadcrumb: VBreadcrumbs,
-
-      
       // ContextMenu: '',
       // Dock: '',
-      Menu: VMenu,
-      Menubar: VAppBar,
+      Menu: VMenu, // TODO cuando PrimeVue tiene popup usar VMeny+VList, pero sino usar vlist
+      // Menubar: '',,
       // MegaMenu: '',
-      PanelMenu: VListGroup,
+      PanelMenu: VList, // TODO
       // TieredMenu: '',
       // Chart: '',
       Message: VAlert,
@@ -314,7 +400,13 @@ export default createVuetify({
       ProgressBar: VProgressLinear,
       ProgressSpinner: VProgressCircular,
       // ScrollTop: '',
+      
+      
       Skeleton: VSkeletonLoader,
+      
+
+
+
       Tag: VChip,
       // Terminal: '',
     },
@@ -779,13 +871,6 @@ export default createVuetify({
         size: 'large',
         density: 'compact',
       },
-      // VBtn: {
-      //   color: 'primary',
-      //   variant: 'flat',
-      //   rounded: 'md',
-      //   size: 'large',
-      //   density: 'compact',
-      // },
       SpeedDial: {
         location: 'top center',
         modelValue: true,
@@ -840,6 +925,93 @@ export default createVuetify({
         truncateLine: 'both',
         dotColor: 'primary',
         size: '16',
+      },
+
+      Carousel: {
+        class: 'aura-carousel',
+        color: 'primary',
+        hideDelimiterBackground: true,
+        height: 300,
+        showArrows: true,
+      },
+      VCarousel: {
+        class: 'aura-carousel',
+        color: 'primary',
+        hideDelimiterBackground: true,
+        height: 300,
+        showArrows: true,
+      },
+
+      Avatar: {
+        VIcon: {
+          size: '1.5rem',
+        },
+      },
+      VAvatar: {
+        VIcon: {
+          size: '1.5rem',
+        },
+      },
+
+      Badge: {
+        inline: true,
+        color: 'primary',
+        rounded: 'md',
+      },
+      VBadge: {
+        inline: true,
+        color: 'primary',
+        rounded: 'md',
+      },
+
+      Chip: {
+        variant: 'flat',
+        rounded: 16,
+      },
+      VChip: {
+        variant: 'flat',
+        rounded: 16,
+      },
+
+      ProgressBar: {
+        class: 'text-body-small font-weight-semibold on-primary',
+        color: 'primary',
+        bgColor: 'border-color',
+        bgOpacity: 1,
+        height: 17.5,
+        rounded: 'md',
+      },
+      VProgressLinear: {
+        color: 'primary',
+        bgColor: 'border-color',
+        bgOpacity: 1,
+        height: 17.5,
+        rounded: 'md',
+      },
+      MeterGroup: {
+        color: 'primary',
+        bgColor: 'border-color',
+        bgOpacity: 1,
+        height: 7,
+        rounded: 'md',
+        roundedBar: true,
+      },
+      ProgressSpinner: {
+        indeterminate: true,
+        size: 100,
+        width: 4,
+        class: 'aura-spinner',
+      },
+
+      Skeleton: {
+        type: 'ossein',
+        height: '1rem',
+        width: '100%',
+      },
+      VSkeletonLoader: {
+        type: 'ossein',
+        height: '1rem',
+        width: '100%',
       },
 
       Tree: {
@@ -924,6 +1096,23 @@ export default createVuetify({
         rounded: 'md',
       },
 
+      PanelMenu: {
+        class: 'aura-panelmenu',
+        elevation: 0,
+        bgColor: 'surface',
+        density: 'comfortable',
+        openStrategy: 'multiple',
+        VListGroup: {
+          expandIcon: 'prime:chevron-right',
+          collapseIcon: 'prime:chevron-down',
+        },
+        VListItem: {
+          rounded: 'md',
+          color: 'on-surface',
+          variant: 'text',
+        },
+      },
+
       Toolbar: {
         color: 'surface',
         border: 'sm border-color',
@@ -951,6 +1140,31 @@ export default createVuetify({
       Popover: {
         closeOnContentClick: false,
       },
+
+      Message: {
+        class: 'aura-message',
+        color: 'severity-info',
+        variant: 'flat',
+        icon: false,
+        iconSize: '1.125rem',
+        rounded: 'md',
+        elevation: 0,
+        density: 'compact',
+        closeIcon: 'prime:times',
+      },
+      VAlert: {
+        class: 'aura-message',
+        color: 'severity-info',
+        variant: 'flat',
+        icon: false,
+        iconSize: '1.125rem',
+        rounded: 'md',
+        elevation: 0,
+        density: 'compact',
+        closeIcon: 'prime:times',
+      },
+
+
 
 
 
@@ -989,14 +1203,20 @@ export default createVuetify({
         },
       },
       Toast: {
+        contentClass: 'aura-toast',
         location: 'top end',
-      },
-      ProgressSpinner: {
-        indeterminate: true,
+        variant: 'flat',
+        rounded: 'md',
+        color: 'severity-info',
+        timeout: 3000,
+        totalVisible: 5,
+        gap: 12,
       },
       Tag: {
-        variant: 'tonal',
-        label: true
+        variant: 'flat',
+        color: 'tag-primary',
+        rounded: 'md',
+        class: 'text-label-large font-weight-bold h-auto py-0.875 px-1.75',
       }
     },
     icons: {

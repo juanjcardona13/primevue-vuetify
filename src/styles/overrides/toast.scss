@@ -1,0 +1,22 @@
+$severities: info, success, warning, error, secondary, contrast;
+
+.aura-toast {
+  &.v-snackbar__wrapper {
+    border: 1px solid transparent;
+  }
+
+  .v-snackbar__title {
+    font-size: 1rem;
+  }
+
+  .v-snackbar__prepend > .v-icon {
+    font-size: 1.125rem;
+    align-self: flex-start;
+  }
+
+  @each $severity in $severities {
+    &.bg-severity-#{$severity} {
+      border-color: rgb(var(--v-theme-severity-#{$severity}-border));
+    }
+  }
+}
