@@ -93,6 +93,7 @@ import { h } from 'vue';
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
+  
   blueprint: {
     theme: {
       themes: {
@@ -361,7 +362,6 @@ export default createVuetify({
       StepPanels: VStepperWindow,
       StepPanel: VStepperWindowItem,
       StepItem: VStepperVertical,
-      
       Tabs: VTabs,
       // TabList
       Tab: VTab,
@@ -400,13 +400,7 @@ export default createVuetify({
       ProgressBar: VProgressLinear,
       ProgressSpinner: VProgressCircular,
       // ScrollTop: '',
-      
-      
       Skeleton: VSkeletonLoader,
-      
-
-
-
       Tag: VChip,
       // Terminal: '',
     },
@@ -756,7 +750,7 @@ export default createVuetify({
         persistentPlaceholder: true,
         menuProps: {
           offset: 2,
-          contentClass: 'rounded-md border'
+          contentClass: 'rounded-md'
         },
         VMenu: {
           VSheet: {
@@ -889,7 +883,6 @@ export default createVuetify({
           }
         }
       },
-
       Paginator: {
         size: 'large',
         density: 'compact',
@@ -926,7 +919,6 @@ export default createVuetify({
         dotColor: 'primary',
         size: '16',
       },
-
       Carousel: {
         class: 'aura-carousel',
         color: 'primary',
@@ -941,7 +933,6 @@ export default createVuetify({
         height: 300,
         showArrows: true,
       },
-
       Avatar: {
         VIcon: {
           size: '1.5rem',
@@ -952,7 +943,6 @@ export default createVuetify({
           size: '1.5rem',
         },
       },
-
       Badge: {
         inline: true,
         color: 'primary',
@@ -963,7 +953,6 @@ export default createVuetify({
         color: 'primary',
         rounded: 'md',
       },
-
       Chip: {
         variant: 'flat',
         rounded: 16,
@@ -972,7 +961,6 @@ export default createVuetify({
         variant: 'flat',
         rounded: 16,
       },
-
       ProgressBar: {
         class: 'text-body-small font-weight-semibold on-primary',
         color: 'primary',
@@ -1002,7 +990,6 @@ export default createVuetify({
         width: 4,
         class: 'aura-spinner',
       },
-
       Skeleton: {
         type: 'ossein',
         height: '1rem',
@@ -1013,7 +1000,6 @@ export default createVuetify({
         height: '1rem',
         width: '100%',
       },
-
       Tree: {
         class: 'aura-treeview',
         density: 'tiny',
@@ -1022,7 +1008,6 @@ export default createVuetify({
           link: false,
         },
       },
-
       Card: {
         elevation: 2,
         rounded: 'xl',
@@ -1031,7 +1016,6 @@ export default createVuetify({
         elevation: 2,
         rounded: 'xl',
       },
-
       Divider: {
         class: 'my-3.5',
         color: 'border-color',
@@ -1040,7 +1024,6 @@ export default createVuetify({
         class: 'my-3.5',
         color: 'border-color',
       },
-
       Stepper: {
         class: 'aura-stepper',
         hideActions: true,
@@ -1067,7 +1050,6 @@ export default createVuetify({
       VStepperHeader: {
         class: 'elevation-0'
       },
-
       Tabs: {
         class: 'aura-tabs',
         color: 'primary',
@@ -1082,7 +1064,6 @@ export default createVuetify({
       VTabsWindow: {
         class: 'aura-tab-panels',
       },
-
       Breadcrumb: {
         divider: '›',
         color: 'on-surface-variant',
@@ -1095,7 +1076,6 @@ export default createVuetify({
         bgColor: 'surface',
         rounded: 'md',
       },
-
       PanelMenu: {
         class: 'aura-panelmenu',
         elevation: 0,
@@ -1112,7 +1092,6 @@ export default createVuetify({
           variant: 'text',
         },
       },
-
       Toolbar: {
         color: 'surface',
         border: 'sm border-color',
@@ -1127,7 +1106,6 @@ export default createVuetify({
         density: 'compact',
         height: 56,
       },
-
       Dialog: {
         scrim: false,
         contentClass: 'justify-center align-center'
@@ -1136,11 +1114,9 @@ export default createVuetify({
         scrim: false,
         contentClass: 'justify-center align-center'
       },
-
       Popover: {
         closeOnContentClick: false,
       },
-
       Message: {
         class: 'aura-message',
         color: 'severity-info',
@@ -1163,12 +1139,6 @@ export default createVuetify({
         density: 'compact',
         closeIcon: 'prime:times',
       },
-
-
-
-
-
-
       Password: {
         type: 'password',
         hideDetails: 'auto',
