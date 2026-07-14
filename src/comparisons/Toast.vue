@@ -1,30 +1,17 @@
 <template>
-  <v-expansion-panel id="component-toast" value="component-toast">
-    <v-expansion-panel-title>
-      <div class="d-flex align-center flex-wrap ga-2">
-        <span>Toast</span>
-        <span class="text-medium-emphasis">→</span>
-        <span>VSnackbarQueue</span>
-        <v-chip color="success" size="x-small" variant="flat">Ready</v-chip>
-      </div>
-    </v-expansion-panel-title>
+  <div class="d-flex flex-wrap ga-4">
+    <v-sheet border class="pa-4 compare-column" rounded="lg">
+      <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
+      <PvButton label="Show" @click="showPvToast" />
+    </v-sheet>
 
-    <v-expansion-panel-text>
-      <div class="d-flex flex-wrap ga-4">
-        <v-sheet border class="pa-4 compare-column" rounded="lg">
-          <div class="text-caption text-medium-emphasis mb-3">PrimeVue Aura</div>
-          <PvButton label="Show" @click="showPvToast" />
-        </v-sheet>
+    <v-sheet border class="pa-4 compare-column" rounded="lg">
+      <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
+      <Button text="Show" @click="toasts = [{ title: 'Info', text: 'Message', timeout: 3000 }]" />
+    </v-sheet>
+  </div>
 
-        <v-sheet border class="pa-4 compare-column" rounded="lg">
-          <div class="text-caption text-medium-emphasis mb-3">Vuetify Blueprint</div>
-          <Button text="Show" @click="toasts = [{ title: 'Info', text: 'Message', timeout: 3000 }]" />
-        </v-sheet>
-      </div>
-
-      <Toast v-model="toasts" />
-    </v-expansion-panel-text>
-  </v-expansion-panel>
+  <Toast v-model="toasts" />
 </template>
 
 <script lang="ts" setup>

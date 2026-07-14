@@ -750,7 +750,7 @@ export default createVuetify({
         persistentPlaceholder: true,
         menuProps: {
           offset: 2,
-          contentClass: 'rounded-md'
+          contentClass: 'rounded-md border'
         },
         VMenu: {
           VSheet: {

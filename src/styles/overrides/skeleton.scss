@@ -1,6 +1,13 @@
 // VSkeletonLoader does not forward props.class, so styles target the component root.
 .v-skeleton-loader {
-  .v-skeleton-loader__ossein {
+  .v-skeleton-loader__avatar,
+  .v-skeleton-loader__button,
+  .v-skeleton-loader__chip,
+  .v-skeleton-loader__divider,
+  .v-skeleton-loader__heading,
+  .v-skeleton-loader__image,
+  .v-skeleton-loader__ossein,
+  .v-skeleton-loader__text {
     background: rgb(var(--v-theme-surface-variant));
   }
 
@@ -11,7 +18,14 @@
 }
 
 .v-theme--dark .v-skeleton-loader {
-  .v-skeleton-loader__ossein {
+  .v-skeleton-loader__avatar,
+  .v-skeleton-loader__button,
+  .v-skeleton-loader__chip,
+  .v-skeleton-loader__divider,
+  .v-skeleton-loader__heading,
+  .v-skeleton-loader__image,
+  .v-skeleton-loader__ossein,
+  .v-skeleton-loader__text {
     background: rgba(255, 255, 255, 0.06);
   }
 
